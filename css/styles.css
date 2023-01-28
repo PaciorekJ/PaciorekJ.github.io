@@ -82,6 +82,10 @@ h1 > mark {
     margin-top: 0px;
 }
 
+#gym-pal {
+    display: inline;
+}
+
 h2 {
     font-size: 1.2rem;
 }
