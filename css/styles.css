@@ -82,8 +82,13 @@ h1 > mark {
     margin-top: 0px;
 }
 
-#gym-pal {
+#oph > ul {
+    margin-top: 0px;
+}
+
+#projects > h3 {
     display: inline;
+    font-weight: bold;
 }
 
 h2 {
