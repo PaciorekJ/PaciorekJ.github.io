@@ -7,7 +7,7 @@
     position: relative;
     text-align: center;
     align-content: center;
-    height: 12rem;
+    height: 9rem;
 }
 
 #header > span {
@@ -16,18 +16,18 @@
     display: block;
     position: absolute;
     width: 100%;
-    height: 100px;
+    height: 60px;
     top: 70px;
 }
 
 h1{
-    left: 40%;
+    left: 30%;
     display: inline;
     position: absolute;
     background-color: white;
     border: 2px solid rgb(117, 108, 11); /* Color */
-    padding: 25px;
-    margin-top: 35px;
+    padding: 20px;
+    margin-top: 20px;
     font-weight: normal;
 }
 
@@ -40,6 +40,7 @@ h1 > mark {
 #left-col {
     float: left;
     width: 35%;
+    height: 800px;
     text-align: right;
     border-right: 2px solid rgb(117, 108, 11); /* color */
     padding-right: 4%;
