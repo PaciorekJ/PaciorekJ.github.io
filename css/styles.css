@@ -1,105 +1,148 @@
+/*
+    Resume for CSS:
+    Designed by Jason Paciorek, Host @ "https://paciorekj.github.io/"
+*/
 
+/* GENERAL: */
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
+/* General font size for h2 */ 
+h2 {
+    font-size: 1.2rem;
+}
+/* Remove bolded text */
+h3, h4 {
+    font-weight: normal;
+}
+/* Turns links blue even if visted */
+a:link, a:visited {
+    color: lightskyblue;
+}
 
+/*************************************/
+
+/* HEADER SECTION: */
 #header {
     position: relative;
     text-align: center;
     align-content: center;
-    height: 9rem;
+    height: 7rem;
 }
-
+/* Box under header */
 #header > span {
-    background-color: black;
-    opacity: .1;
+    background-color: rgb(117, 108, 11);
+    opacity: .3;
     display: block;
     position: absolute;
     width: 100%;
-    height: 60px;
-    top: 70px;
+    height: 45px;
+    top: 60px;
+    margin-bottom: 5px;
 }
-
+/* Box name displayed at top */
 h1{
     left: 30%;
+    text-align: center;
     display: inline;
     position: absolute;
     background-color: white;
     border: 2px solid rgb(117, 108, 11); /* Color */
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
+    padding-bottom: 20px;
     font-weight: normal;
 }
-
+/* Marks the last name (so color can be changed) */
 h1 > mark {
     background-color: white;
     color: rgb(117, 108, 11); /* Color */
     font-weight: bold;
 }
 
-#left-col {
-    float: left;
-    width: 35%;
-    height: 800px;
-    text-align: right;
-    border-right: 2px solid rgb(117, 108, 11); /* color */
-    padding-right: 4%;
-}
+/*************************************/
 
-#right-col {
-    float: right;
-    width: 57%;
-}
-
+/* BODY SECTION (container for two columns)*/
+/* General body that contains left and right cols*/
 #body {
+    max-width: 1000px;
     height: 100%;
+    margin: auto;
 }
-
+ul {
+    text-align: left;
+}
+/* Used to properly split the two cols */
 #body:after {
     content: "";
     display: table;
     clear: both;
 }
 
+/*************************************/
+
+/* LEFT COL SECTION: */
+#left-col {
+    float: left;
+    width: 33%;
+    height: 875px;
+    text-align: left;
+    border-right: 2px solid rgb(117, 108, 11); /* color */
+    padding-right: 2%;
+    padding-left: 2%;
+}
+/* Remove bottom margin and add to top for all text in left col (not headers) */
+#left-col > article > * {
+    margin-top: 6px;
+    margin-bottom: 0px;
+}
+/* Remove indentation from lists */
+#relevant-courses > ul {
+    padding: 0;
+}
+/* Adjusts images in contacts */
 #contact > p > img, #contact > a > img {
     width: 15px;
     height: 15px;
     margin-left: 5px;
 }
-
-#contact > h2, #work-experience > h2 {
-    margin-top: 0;
-}
-
-#relevant-courses > ul, #skills > ul {
+/* Removes bullet points */
+#relevant-courses > ul {
     list-style: none;
 }
 
-#oph > h4, #oph > h3 {
+/*************************************/
+
+/* RIGHT COLUMN: */
+/* Right col */
+#right-col {
+    float: right;
+    width: 60%;
+    padding-left: 2%;
+}
+/* Decrease vertical margins to 0 to save space */
+#oph > *, #personal-projects > * {
+    margin-top: 0px;
     margin-bottom: 0px;
 }
-
 #oph > p {
-    margin-top: 0px;
-}
-
-#oph > ul {
-    margin-top: 0px;
-}
-
-#projects > h3 {
-    display: inline;
+    margin-bottom: 10px;
     font-weight: bold;
 }
-
-h2 {
-    font-size: 1.2rem;
+#work-experience > h2 {
+    margin-top: 0;
+    margin-bottom: 0;
 }
-
-h3, h4 {
-    font-weight: normal;
+#oph > h4 {
+    text-align: left;
 }
-
-a:link, a:visited {
-    color: lightskyblue;
+#personal-projects > h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#personal-projects > h3 {
+    text-align: left;
+}
+#right-col > article > ul {
+    margin-bottom: 10px;
 }
