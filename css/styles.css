@@ -25,7 +25,6 @@ a:link, a:visited {
 /* HEADER SECTION: */
 #header {
     position: relative;
-    text-align: center;
     align-content: center;
     height: 7rem;
 }
@@ -42,7 +41,7 @@ a:link, a:visited {
 }
 /* Box name displayed at top */
 h1{
-    left: 30%;
+    left: 37%;
     text-align: center;
     display: inline;
     position: absolute;
@@ -121,7 +120,7 @@ ul {
     padding-left: 2%;
 }
 /* Decrease vertical margins to 0 to save space */
-#oph > *, #personal-projects > * {
+#oph > * {
     margin-top: 0px;
     margin-bottom: 0px;
 }
