@@ -25,6 +25,7 @@ a:link, a:visited {
 /* HEADER SECTION: */
 #header {
     position: relative;
+    text-align: center;
     align-content: center;
     height: 7rem;
 }
@@ -135,13 +136,26 @@ ul {
 #oph > h4 {
     text-align: left;
 }
+#personal-projects > * {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 #personal-projects > h2 {
     margin-top: 10px;
     margin-bottom: 10px;
-}
-#personal-projects > h3 {
-    text-align: left;
-}
+} 
 #right-col > article > ul {
     margin-bottom: 10px;
 }
+/* Remove bullet points */
+#volunteer-work > ul {
+    list-style: none;
+}
+#volunteer-work > * {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#volunteer-work > h2, #volunteer-work > h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+} 
