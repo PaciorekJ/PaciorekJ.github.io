@@ -1,189 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jason Paciorek's Resume</title>
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <!-- Top of page -->
-    <div id="header">
-      <span></span>
-      <h1>JASON <mark>PACIOREK</mark></h1>
-    </div>
-    <!-- Bottom chunk -->
-    <div id="body">
-      <!-- Left hand side -->
-      <div id="left-col">
-        <article id="contact">
-          <h2>CONTACT</h2>
-          <p>
-            pacio017@umn.edu<img src="images/envelope.png" alt="mail icon" />
-          </p>
-          <p>
-            (952) 297-2727<img src="images/telephone.png" alt="phone icon" />
-          </p>
-          <p>
-            Apple Valley, MN<img
-              src="images/location.png"
-              alt="location icon"
-            />
-          </p>
-          <a href="https://github.com/PaciorekJ"
-            >Github<img src="images/github.png" alt="github icon"
-          /></a>
-        </article>
-        <article id="education">
-          <h2>EDUCATION</h2>
-          <p>Bachelor of Science in Computer Science</p>
-          <p>The University Of Minnesota CSE</p>
-          <p>Minneapolis, MN</p>
-          <p>Graduation date: Fall 2023</p>
-          <p>GPA: 3.729</p>
-        </article>
-        <article id="skills">
-          <h2>SKILLS</h2>
-          <p>
-            C, HTML5, CSS3, JavaScript, Java, C++, Python, Haskell, Ocaml, Git,
-            Linux, VSCode
-          </p>
-        </article>
-        <article id="relevant-courses">
-          <h2>RELEVANT COURSES</h2>
-          <ul>
-            <li>Intro to Operating Systems,</li>
-            <li>Machine Architecture and Org,</li>
-            <li>Algorithms & Data Structures,</li>
-            <li>Advanced Algorithms,</li>
-            <li>Functional Algorithm Design,</li>
-            <li>Program Design and Development</li>
-          </ul>
-        </article>
-        <article id="course-projects">
-          <h2>COURSE PROJECTS</h2>
-          <h3>Browser and Server in C</h3>
-          <ul>
-            <li>Browser used multiprocessing to handle multiple tabs.</li>
-            <li>
-              Browser utilized non-blocking IPC via pipes to communicate with a
-              controller parent process.
-            </li>
-            <li>
-              The server had a cache for content requests using a FIFO
-              replacement policy.
-            </li>
-            <li>
-              The server employed sockets to accept client connections to the
-              server.
-            </li>
-            <li>
-              The server used multithreading with a worker and dispatcher
-              threading model to handle HTTP requests from the client.
-            </li>
-          </ul>
-        </article>
-      </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Jason Paciorek's Resume</title>
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<!-- Top of page -->
+		<div id="header">
+			<span></span>
+			<h1>JASON <mark>PACIOREK</mark></h1>
+		</div>
+		<!-- Bottom chunk -->
+		<div id="body">
+			<!-- Left hand side -->
+			<div id="left-col">
+				<article id="contact">
+					<h2>CONTACT</h2>
+					<p>
+						<img
+							class="contact__icon"
+							src="images/envelope.png"
+							alt="mail icon"
+						/>
+						pacio017@umn.edu
+					</p>
+					<p>
+						<img
+							class="contact__icon"
+							src="images/telephone.png"
+							alt="phone icon"
+						/>
+						(952) 297-2727
+					</p>
+					<p>
+						<img
+							class="contact__icon"
+							src="images/location.png"
+							alt="location icon"
+						/>
+						Apple Valley, MN
+					</p>
+					<a href="https://github.com/PaciorekJ"
+						><img
+							class="contact__icon"
+							src="images/github.png"
+							alt="github icon"
+						/>Github</a
+					>
+				</article>
+				<article id="education">
+					<h2>EDUCATION</h2>
+					<p>Bachelor of Science in Computer Science</p>
+					<p>The University Of Minnesota CSE</p>
+					<p>Minneapolis, MN</p>
+					<p>Graduation date: Fall 2023</p>
+					<p>GPA: 3.729</p>
+				</article>
+				<article id="skills">
+					<h2>SKILLS</h2>
+					<p>
+						C, HTML5, CSS3, JavaScript, Java, C++, Python, Haskell, Ocaml, Git,
+						Linux, VSCode
+					</p>
+				</article>
+				<article id="relevant-courses">
+					<h2>RELEVANT COURSES</h2>
+					<ul>
+						<li>Intro to Operating Systems,</li>
+						<li>Machine Architecture and Org,</li>
+						<li>Algorithms & Data Structures,</li>
+						<li>Advanced Algorithms,</li>
+						<li>Functional Algorithm Design,</li>
+						<li>Program Design and Development</li>
+					</ul>
+				</article>
+				<article id="course-projects">
+					<h2>COURSE PROJECTS</h2>
+					<h3>Browser and Server in C</h3>
+					<ul>
+						<li>Browser used multiprocessing to handle multiple tabs.</li>
+						<li>
+							Browser utilized non-blocking IPC via pipes to communicate with a
+							controller parent process.
+						</li>
+						<li>
+							The server had a cache for content requests using a FIFO
+							replacement policy.
+						</li>
+						<li>
+							The server employed sockets to accept client connections to the
+							server.
+						</li>
+						<li>
+							The server used multithreading with a worker and dispatcher
+							threading model to handle HTTP requests from the client.
+						</li>
+					</ul>
+				</article>
+			</div>
 
-      <!-- Right hand side -->
-      <div id="right-col">
-        <article id="work-experience">
-          <h2>WORK EXPERIENCE</h2>
-          <article id="oph">
-            <h3>Original Pancake House, Edina, MN</h3>
-            <p>December 2016 - Present</p>
-            <h4>Food Runner</h4>
-            <ul>
-              <li>
-                Lead communication between the kitchen, servers, customers, and
-                front of the house.
-              </li>
-              <li>
-                Resolve conflicts between kitchen-server and server-customer.
-              </li>
-              <li>
-                Read and observe customer body language to better aid their
-                needs.
-              </li>
-              <li>
-                Facilitate teamwork amongst the serving staff to deliver food
-                efficiently.
-              </li>
-            </ul>
-            <h4>Server</h4>
-            <ul>
-              <li>
-                Effectively address and listen to customers' needs under the
-                pressure of a fast-paced work environment.
-              </li>
-            </ul>
-          </article>
-        </article>
-        <article id="personal-projects">
-          <h2>PERSONAL PROJECTS</h2>
-          <h3>
-            Gym Pal (Spring 2018)
-            <a
-              href="https://studio.code.org/projects/applab/E1J5md8cXRJzvPbcP1zIB1yXlf8w5w1JnV9963WEwxA"
-            >
-              (View)
-            </a>
-          </h3>
-          <ul>
-            <li>
-              Application to calculate and track macro-nutrients and workouts
-              and provides metabolic information.
-            </li>
-            <li>UI was designed using code.org.</li>
-            <li>
-              Functionality in the application implemented using JavaScript.
-            </li>
-          </ul>
-          <h3>
-            Blackjack Game (May 2019)
-            <a href="https://github.com/PaciorekJ/Blackjack-Project">
-              (View)
-            </a>
-          </h3>
-          <ul>
-            <li>Built using Java</li>
-            <li>
-              A Blackjack game with a betting system. Follows traditional rules
-              of blackjack gameplay.
-            </li>
-            <li>Used processing 3's library to design the GUI.</li>
-          </ul>
-          <h3>
-            Website Resume (January 2023)
-            <a href="https://github.com/PaciorekJ/PaciorekJ.github.io">
-              (View)
-            </a>
-          </h3>
-          <ul>
-            <li>Resume built using HTML5 and CSS3.</li>
-            <li>Resume hosted on GitHub pages.</li>
-          </ul>
-        </article>
-        <article id="volunteer-work">
-          <h2>VOLUNTEER WORK</h2>
-          <h3>Mount Airy Boys & Girls Club (20 Hours)</h3>
-          <p>
-            The Boys and Girls Club aims to advance cultural equity in
-            communities. As a TRIO student, I found a connection to the kids at
-            the Boys and Girls Club. I served as a role model for the children
-            and a tutor; I primarily tutored kids in math.
-          </p>
-          <h3>Cornerstone Advocacy Service (5 Hours)</h3>
-          <p>
-            Cornerstone specializes in aiding those who have experienced trauma
-            due to domestic violence, sexual violence, or human trafficking. I
-            was allowed to serve those Cornerstone advocates through the
-            Original Pancake House.
-          </p>
-        </article>
-      </div>
-    </div>
-  </body>
+			<!-- Right hand side -->
+			<div id="right-col">
+				<article id="work-experience">
+					<h2>WORK EXPERIENCE</h2>
+					<article id="oph">
+						<h3>Original Pancake House, Edina, MN</h3>
+						<p>December 2016 - Present</p>
+						<h4>Food Runner</h4>
+						<ul>
+							<li>
+								Lead communication between the kitchen, servers, customers, and
+								front of the house.
+							</li>
+							<li>
+								Resolve conflicts between kitchen-server and server-customer.
+							</li>
+							<li>
+								Read and observe customer body language to better aid their
+								needs.
+							</li>
+							<li>
+								Facilitate teamwork amongst the serving staff to deliver food
+								efficiently.
+							</li>
+						</ul>
+						<h4>Server</h4>
+						<ul>
+							<li>
+								Effectively address and listen to customers' needs under the
+								pressure of a fast-paced work environment.
+							</li>
+						</ul>
+					</article>
+				</article>
+				<article id="personal-projects">
+					<h2>PERSONAL PROJECTS</h2>
+					<h3>
+						Blackjack Game (May 2019)
+						<a href="https://github.com/PaciorekJ/Blackjack-Project">
+							(View)
+						</a>
+					</h3>
+					<ul>
+						<li>Built using Java</li>
+						<li>
+							A Blackjack game with a betting system. Follows traditional rules
+							of blackjack gameplay.
+						</li>
+						<li>Used processing 3's library to design the GUI.</li>
+					</ul>
+					<h3>
+						Website Resume (January 2023)
+						<a href="https://github.com/PaciorekJ/PaciorekJ.github.io">
+							(View)
+						</a>
+					</h3>
+					<ul>
+						<li>Resume built with HTML5 and CSS3.</li>
+						<li>Resume hosted on GitHub pages.</li>
+					</ul>
+					<h3>
+						Website Moshify (April-May 2023)
+						<a href="https://moshify-jason-paciorek.netlify.app/"> (View) </a>
+					</h3>
+					<ul>
+						<li>Website built with HTML5, CSS3, and Javascipt</li>
+						<li>Website was constructed using a component driven methology</li>
+						<li>Layout is responsive to both mobile and desktop</li>
+						<li>
+							Parcel and Netlify were used for the deploymeny of the website
+						</li>
+					</ul>
+				</article>
+				<article id="volunteer-work">
+					<h2>VOLUNTEER WORK</h2>
+					<h3>Mount Airy Boys & Girls Club (20 Hours)</h3>
+					<p>
+						The Boys and Girls Club aims to advance cultural equity in
+						communities. As a TRIO student, I found a connection to the kids at
+						the Boys and Girls Club. I served as a role model for the children
+						and a tutor; I primarily tutored kids in math.
+					</p>
+					<h3>Cornerstone Advocacy Service (5 Hours)</h3>
+					<p>
+						Cornerstone specializes in aiding those who have experienced trauma
+						due to domestic violence, sexual violence, or human trafficking. I
+						was allowed to serve those Cornerstone advocates through the
+						Original Pancake House.
+					</p>
+				</article>
+			</div>
+		</div>
+	</body>
 </html>
