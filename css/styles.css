@@ -102,7 +102,7 @@ ul {
 }
 /* Adjusts images in contacts */
 .contact__icon {
-    padding-right: .5rem;
+    padding-right: .8rem;
 }
 #contact > p > img, #contact > a > img {
     width: 15px;
