@@ -95,7 +95,7 @@ ul {
 /* LEFT COL SECTION: */
 #left-col {
     float: left;
-    width: 33%;
+    width: 35%;
     height: auto;
     text-align: left;
     border-right: 2px solid rgb(117, 108, 11); /* color */
@@ -115,7 +115,7 @@ ul {
 .contact__icon {
     padding-right: .8rem;
 }
-#contact > p > img, #contact > a > img {
+#contact img, #contact a {
     width: 2rem;
     height: 1rem;
     margin-left: 5px;
@@ -175,7 +175,7 @@ ul {
 } 
 
 /* Correct layout for smaller screens */
-@media (max-width: 800px) {
+@media (max-width: 800px) and not print {
     #header > h1 {
         margin: auto;
         top: 1.5rem;
@@ -195,3 +195,13 @@ ul {
         border-right: 2px solid rgb(117, 108, 11);
     }
 } 
+
+/* Correct layout for printing */
+@media print {
+    #left-col {
+        font-size: 80%;
+    }
+    #right-col {
+        font-size: 90%;
+    }
+}
