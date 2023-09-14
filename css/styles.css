@@ -175,7 +175,7 @@ ul {
 } 
 
 /* Correct layout for smaller screens */
-@media (max-width: 800px) and not print {
+@media (max-width: 800px) {
     #header > h1 {
         margin: auto;
         top: 1.5rem;
