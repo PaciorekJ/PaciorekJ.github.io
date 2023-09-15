@@ -95,7 +95,7 @@ ul {
 /* LEFT COL SECTION: */
 #left-col {
     float: left;
-    width: 35%;
+    width: 30%;
     height: auto;
     text-align: left;
     border-right: 2px solid rgb(117, 108, 11); /* color */
@@ -131,7 +131,7 @@ ul {
 /* Right col */
 #right-col {
     float: right;
-    width: 65%;
+    width: 70%;
     padding-left: 2%;
 }
 /* Decrease vertical margins to 0 to save space */
@@ -150,11 +150,11 @@ ul {
 #oph > h4 {
     text-align: left;
 }
-#personal-projects > * {
+#projects * {
     margin-top: 0px;
     margin-bottom: 0px;
 }
-#personal-projects > h2 {
+#projects h2 {
     margin-top: 10px;
     margin-bottom: 10px;
 } 
@@ -189,10 +189,16 @@ ul {
         float: none;
         width: 100vw;
         height: auto;
-        padding: 0 1rem 1.5rem 1rem;
+        padding: 0 1rem 2rem 1rem;
         margin: 0;
         border-left: 2px solid rgb(117, 108, 11);
         border-right: 2px solid rgb(117, 108, 11);
+    }
+    #left-col {
+        padding-bottom: 0;
+    }
+    #volunteer-work {
+        display: none;
     }
 } 
 
