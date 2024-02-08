@@ -33,9 +33,13 @@ Navigate to [https://PaciorekJ.github.io](https://PaciorekJ.github.io)
 [![LinkedIn](linkedin-shield)][linkedin-url]
 
 [resume-shield]: https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logoColor=white)
+
 [github-shield]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
+
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
 [resume-url]: https://paciorekj.github.io/
+
 [github-url]: https://github.com/PaciorekJ
+
 [linkedin-url]: https://linkedin.com/in/jasonpaciorek
