@@ -8,7 +8,7 @@ Hello! I'm Jason Paciorek, a passionate web technologist and proud alumnus of th
 - **Universal Compatibility**: Experience a site that gracefully adapts to desktops, mobile devices, and printers, ensuring my resume is accessible anywhere, anytime.
 - **Modular Design**: The Data/ directory centralizes content management, embodying my commitment to efficient and reusable code practices.
 
-## Technologies I Use
+## Technologies I Used
 - HTML/CSS for foundational web structure and styling.
 - TypeScript for scalable, robust JavaScript applications.
 - React.js to build dynamic, user-friendly interfaces.
