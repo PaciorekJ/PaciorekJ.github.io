@@ -26,7 +26,7 @@ Navigate to [https://PaciorekJ.github.io](https://PaciorekJ.github.io)
 
 **Email**: Jasonpaciorek@yahoo.com
 
-[![Resume](resume-shield)](resume-url)
+[![Resume]( https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logoColor=white)](resume-url)
 
 [![GitHub](github-shield)](github-url)
 
