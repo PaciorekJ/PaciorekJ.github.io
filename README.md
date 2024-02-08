@@ -2,7 +2,7 @@
 # Jason Paciorek's Resume Website
 
 ## Introduction
-My name is Jason Paciorek, I'm a recent graduate from the University of Minnesota Twin Cities! I've developed a love and passion for learning web technologies and love oppountitties to challenge myself by adding a new tool to my tool belt. 
+My name is Jason Paciorek, I'm a recent graduate from the University of Minnesota Twin Cities! I've developed a love and passion for learning web technologies and love opportunities to challenge myself by adding a new tool to my tool belt. 
 
 ## Features
 * The resume can be downloaded as a PDF on Desktop.
@@ -18,7 +18,7 @@ My name is Jason Paciorek, I'm a recent graduate from the University of Minnesot
 * Github Actions & YAML
 
 ## How to Navigate
-Navigate to [(https://PaciorekJ.github.io)](https://PaciorekJ.github.io)
+Navigate to [https://PaciorekJ.github.io](https://PaciorekJ.github.io)
 
 ## Contact Info
 
@@ -26,14 +26,16 @@ Navigate to [(https://PaciorekJ.github.io)](https://PaciorekJ.github.io)
 
 **Email**: Jasonpaciorek@yahoo.com
 
-[![Resume](https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logoColor=white)](https://paciorekj.github.io/)
+[![Resume](resume-shield)](resume-url)
 
-[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)][github-url]
+[![GitHub](github-shield][github-url]
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
+[resume-shield]: https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logoColor=white)
+[github-shield]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
-[linkedin-url]: https://linkedin.com/in/jasonpaciorek
 [resume-url]: https://paciorekj.github.io/
 [github-url]: https://github.com/PaciorekJ
+[linkedin-url]: https://linkedin.com/in/jasonpaciorek
