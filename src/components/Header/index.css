@@ -1,0 +1,43 @@
+.header {
+	position: relative;
+	text-align: center;
+	align-content: center;
+	height: max-content;
+	margin: 0.2rem 0 2rem 0;
+}
+
+/* Box under header */
+span {
+	display: block;
+	position: absolute;
+	width: 100%;
+	top: 4rem;
+	z-index: -1;
+
+	min-height: 9vh;
+
+	background-color: var(--color-700);
+	opacity: 0.3;
+}
+
+@media print {
+	span {
+		min-height: 4vh;
+	}
+}
+
+.header__name > mark {
+	background-color: white;
+	color: var(--color-700);
+}
+
+.header__name {
+	border: 2px solid black;
+	width: min-content;
+	max-width: 95vw;
+	min-width: 50vw;
+	text-wrap: nowrap;
+	margin: auto;
+	padding: 2rem;
+	background-color: white;
+}
