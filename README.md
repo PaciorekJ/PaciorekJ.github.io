@@ -1,34 +1,29 @@
-
 # Jason Paciorek's Resume Website
 
-## Introduction
-My name is Jason Paciorek, I'm a recent graduate from the University of Minnesota Twin Cities! I've developed a love and passion for learning web technologies and love opportunities to challenge myself by adding a new tool to my tool belt. 
+## Welcome
+Hello! I'm Jason Paciorek, a passionate web technologist and proud alumnus of the University of Minnesota Twin Cities. My journey into the world of web development began during my studies and has since evolved into a quest for mastery over the latest technologies. With each project, I aim to push the boundaries of what's possible, making every challenge an opportunity to expand my skill set and innovate.
 
-## Features
-* The resume can be downloaded as a PDF on Desktop.
-* Responsive to printers, mobile devices, and desktops
-* Project structured with an emphasis on reusability. The `./Data/` directory controls all Data in the Resume.
+## Website Highlights
+- **Downloadable Resume**: Access a PDF version of my resume with a simple click—optimized for desktop users.
+- **Universal Compatibility**: Experience a site that gracefully adapts to desktops, mobile devices, and printers, ensuring my resume is accessible anywhere, anytime.
+- **Modular Design**: The Data/ directory centralizes content management, embodying my commitment to efficient and reusable code practices.
 
-## Technologies Used
-* HTML/CSS
-* Typescript
-* React.js
-* Bootstrap
-* Vite
-* Github Actions & YAML
+## Technologies I Use
+- HTML/CSS for foundational web structure and styling.
+- TypeScript for scalable, robust JavaScript applications.
+- React.js to build dynamic, user-friendly interfaces.
+- Bootstrap for responsive design that looks great on any device.
+- Vite as a blazing-fast build tool enhancing development experience.
+- GitHub Actions & YAML for automated workflows, ensuring smooth deployment and integration processes.
 
-## How to Navigate
-Navigate to [https://PaciorekJ.github.io](https://PaciorekJ.github.io)
+## Explore My Work
+Dive into my portfolio at [https://PaciorekJ.github.io](https://PaciorekJ.github.io). Here, you'll find a curated showcase of projects, each demonstrating my approach to solving problems and development. From interactive web applications to innovative use of web technologies, each project reflects my dedication to excellence in web development, or at least striving for it!
 
-## Contact Info
+## Connect With Me
+I'm always on the lookout for new and fresh challenges and opportunities. Whether you're interested in discussing potential projects or just want to say hi, feel free to reach out:
 
-**Author**: Jason Paciorek
+- **Email**: Jasonpaciorek@yahoo.com
+- **LinkedIn**: [![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555)](https://linkedin.com/in/jasonpaciorek)
+- **GitHub**: [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PaciorekJ)
 
-**Email**: Jasonpaciorek@yahoo.com
-
-[![Resume](https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logoColor=white)](https://paciorekj.github.io/)
-
-[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PaciorekJ)
-
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555)](https://linkedin.com/in/jasonpaciorek)
-
+Let's make something great together.
