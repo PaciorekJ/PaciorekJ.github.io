@@ -26,20 +26,9 @@ Navigate to [https://PaciorekJ.github.io](https://PaciorekJ.github.io)
 
 **Email**: Jasonpaciorek@yahoo.com
 
-[![Resume]( https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logoColor=white)](resume-url)
+[![Resume](https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logoColor=white)](https://paciorekj.github.io/)
 
-[![GitHub](github-shield)](github-url)
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PaciorekJ)
 
-[![LinkedIn](linkedin-shield)](linkedin-url)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555)](https://linkedin.com/in/jasonpaciorek)
 
-[resume-shield]: https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logoColor=white
-
-[github-shield]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
-
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-
-[resume-url]: https://paciorekj.github.io/
-
-[github-url]: https://github.com/PaciorekJ
-
-[linkedin-url]: https://linkedin.com/in/jasonpaciorek
