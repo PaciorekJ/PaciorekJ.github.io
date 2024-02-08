@@ -17,7 +17,7 @@ Hello! I'm Jason Paciorek, a passionate web technologist and proud alumnus of th
 - GitHub Actions & YAML for automated workflows, ensuring smooth deployment and integration processes.
 
 ## Explore My Work
-Dive into my portfolio at [https://PaciorekJ.github.io](https://PaciorekJ.github.io). Here, you'll find a curated showcase of projects, each demonstrating my approach to solving problems and development. From interactive web applications to innovative use of web technologies, each project reflects my dedication to excellence in web development, or at least striving for it!
+Dive into my portfolio at [https://github.com/PaciorekJ](https://github.com/PaciorekJ). Here, you'll find a curated showcase of projects, each demonstrating my approach to solving problems and development. From interactive web applications to innovative use of web technologies, each project reflects my dedication to excellence in web development, or at least striving for it!
 
 ## Connect With Me
 I'm always on the lookout for new and fresh challenges and opportunities. Whether you're interested in discussing potential projects or just want to say hi, feel free to reach out:
