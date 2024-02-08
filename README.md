@@ -26,6 +26,9 @@ Navigate to [https://PaciorekJ.github.io](https://PaciorekJ.github.io)
 
 **Email**: Jasonpaciorek@yahoo.com
 
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [![Resume](resume-shield)](resume-url)
 
 [![GitHub](github-shield][github-url]
