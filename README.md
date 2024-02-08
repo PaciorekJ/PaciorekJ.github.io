@@ -26,14 +26,11 @@ Navigate to [https://PaciorekJ.github.io](https://PaciorekJ.github.io)
 
 **Email**: Jasonpaciorek@yahoo.com
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
 [![Resume](resume-shield)](resume-url)
 
-[![GitHub](github-shield][github-url]
+[![GitHub](github-shield)][github-url]
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn](linkedin-shield)][linkedin-url]
 
 [resume-shield]: https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logoColor=white)
 [github-shield]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
