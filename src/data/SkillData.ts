@@ -1,21 +1,29 @@
-
 const skills: string[] = [
     "C", 
     "C++", 
     "HTML5", 
     "CSS3", 
+    "JavaScript", 
+    "TypeScript", 
     "React", 
     "Node.js", 
-    "Typescript", 
-    "JavaScript", 
-    "Java",
-	"Python", 
-    "Haskell", 
-    "Ocaml", 
+    "Express", 
+    "MongoDB", 
+    "SQL", 
+    "REST APIs", 
+    "Chakra UI", 
+    "Material-UI", 
+    "React Query", 
+    "React Router", 
+    "Zustand", 
+    "Passport.js", 
+    "Socket.IO", 
+    "Vercel", 
+    "Render", 
+    "Docker", 
     "Git", 
     "Linux", 
-    "VSCode", 
-    "Docker"
+    "VSCode"
 ]
 
-export default skills
+export default skills;
