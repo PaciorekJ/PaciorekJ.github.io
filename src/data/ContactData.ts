@@ -11,8 +11,8 @@ const contacts: Contact[] = [
 	{
 		src: envelope,
 		alt: "mail icon",
-		href: "mailto:jasonpaciorek@proton.me",
-		displayText: "jasonpaciorek@proton.me",
+		href: "mailto:paciorekjason@gmail.com",
+		displayText: "paciorekjason@gmail.com",
 	},
 	{
 		src: phone,
