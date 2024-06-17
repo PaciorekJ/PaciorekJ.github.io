@@ -22,7 +22,7 @@ You can find this project (my resume) deployed at [https://paciorekJ.github.io](
 ## Connect With Me
 I'm always on the lookout for new and fresh challenges and opportunities. Whether you're interested in discussing potential projects or just want to say hi, feel free to reach out:
 
-- **Email**: Jasonpaciorek@yahoo.com
+- **Email**: paciorekjason@gmail.com
 - **LinkedIn**: [![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555)](https://linkedin.com/in/jasonpaciorek)
 - **GitHub**: [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PaciorekJ)
 
