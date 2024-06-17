@@ -4,10 +4,28 @@ const projectData: SectionProps[] = [
 	{
 		header: (
 			<>
-				GameHWND (Jan-Feb 2024)
-				<a href="https://github.com/PaciorekJ/GameHWND">
-					https://github.com/PaciorekJ/GameHWND
+				FitnessBytes (Feb-May 2024)
+				<a href="https://www.fitness-bytes.com/">
+					https://www.fitness-bytes.com/
 				</a>
+			</>
+		),
+		lists: [
+			{
+				values: [
+					"Developed FitnessBytes, a full-stack social media platform, using React, Node.js, Express, and MongoDB, providing a robust and scalable backend infrastructure.",
+					"Implemented user authentication and session management with Passport.js, ensuring secure and seamless user experiences.",
+					"Integrated real-time features with Socket.IO, enhancing user engagement through instant messaging and notifications.",
+					"Utilized Material-UI and responsive design principles to create a visually appealing and user-friendly interface, optimized for all devices.",
+				],
+			},
+		],
+	},
+	{
+		header: (
+			<>
+				GameHWND (Jan-Feb 2024)
+				<a href="https://gamehwnd.vercel.app/">https://gamehwnd.vercel.app/</a>
 			</>
 		),
 		lists: [
@@ -41,24 +59,12 @@ const projectData: SectionProps[] = [
 			},
 		],
 	},
-	{
-		header: (
-			<>
-				Website Resume (January 2023 - Present)
-				<a href="https://PaciorekJ.github.io">https://PaciorekJ.github.io</a>
-			</>
-		),
-		lists: [
-			{
-				values: [
-					"Resume built with React and Typescript.",
-					"Resume hosted on GitHub pages.",
-					"Layout is responsive to printers, mobile, and desktops",
-				],
-			},
-		],
-	},
-	{
+];
+
+export default projectData;
+
+/**
+ * {
 		header: "Browser and Server in C (October 2022)",
 		lists: [
 			{
@@ -71,25 +77,4 @@ const projectData: SectionProps[] = [
 			},
 		],
 	},
-	// {
-	// 	header: (
-	// 		<>
-	// 			Blackjack Game (May 2019)
-	// 			<a href="https://github.com/PaciorekJ/Blackjack-Project">
-	// 				https://github.com/PaciorekJ/Blackjack-Project
-	// 			</a>
-	// 		</>
-	// 	),
-	// 	lists: [
-	// 		{
-	// 			values: [
-	// 				"Built using Java",
-	// 				"A Blackjack game with a betting system. Follows traditional rules of blackjack gameplay.",
-	// 				"Used processing 3's library to design the GUI.",
-	// 			],
-	// 		},
-	// 	],
-	// },
-];
-
-export default projectData;
+ */
