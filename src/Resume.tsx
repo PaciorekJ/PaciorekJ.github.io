@@ -30,6 +30,9 @@ const Resume = () => {
 							</ContactLink>
 						))}
 					</Article>
+					<Article header="SKILLS">
+						<SeperatedList data={skills} />
+					</Article>
 					<Article header="EDUCATION">
 						<Section data={educationData} />
 					</Article>
@@ -41,9 +44,6 @@ const Resume = () => {
 					</Article>
 				</div>
 				<div className="grid-item">
-					<Article header="SKILLS">
-						<SeperatedList data={skills} />
-					</Article>
 					<Article header="PROJECTS">
 						<Section data={projectData} />
 					</Article>
