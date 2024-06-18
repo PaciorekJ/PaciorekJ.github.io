@@ -1,14 +1,14 @@
 const volunteerData = [
-    {
-      header: "Mount Airy Boys & Girls Club",
-      lists: [
-        {
-          values: [
-            "The Boys and Girls Club aims to advance cultural equity in communities. As a TRIO student, I found a connection to the kids at the Boys and Girls Club. I served as a role model for the children and a tutor; I primarily tutored kids in math."
-          ],
-        },
-      ],
-    },
+    // {
+    //   header: "Mount Airy Boys & Girls Club",
+    //   lists: [
+    //     {
+    //       values: [
+    //         "The Boys and Girls Club aims to advance cultural equity in communities. As a TRIO student, I found a connection to the kids at the Boys and Girls Club. I served as a role model for the children and a tutor; I primarily tutored kids in math."
+    //       ],
+    //     },
+    //   ],
+    // },
     {
       header: "Cornerstone Advocacy Service",
       lists: [
