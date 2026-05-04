@@ -1,29 +1,88 @@
-# Jason Paciorek's Resume Website
+# Jason Paciorek — Portfolio Website
 
-## Welcome
-Hello! I'm Jason Paciorek, a passionate web technologist and proud alumnus of the University of Minnesota Twin Cities. My journey into the world of web development began during my studies and has since evolved into a quest for mastery over the latest technologies. With each project, I aim to push the boundaries of what's possible, making every challenge an opportunity to expand my skill set and innovate.
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge\&logo=react\&logoColor=61DAFB)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge\&logo=typescript\&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge\&logo=vite\&logoColor=white)](https://vite.dev/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge\&logo=githubpages\&logoColor=white)](https://pages.github.com/)
 
-## Website Highlights
-- **Downloadable Resume**: Access a PDF version of my resume with a simple click—optimized for desktop users.
-- **Universal Compatibility**: Experience a site that gracefully adapts to desktops, mobile devices, and printers, ensuring my resume is accessible anywhere, anytime.
-- **Modular Design**: The Data/ directory centralizes content management, embodying my commitment to efficient and reusable code practices.
+Personal portfolio website for showcasing my software engineering work, technical background, selected projects, and downloadable resume.
 
-## Technologies I Used
-- HTML/CSS for foundational web structure and styling.
-- TypeScript for scalable, robust JavaScript applications.
-- React.js to build dynamic, user-friendly interfaces.
-- Bootstrap for responsive design that looks great on any device.
-- Vite as a blazing-fast build tool enhancing development experience.
-- GitHub Actions & YAML for automated workflows, ensuring smooth deployment and integration processes.
+Live site: [https://paciorekj.github.io](https://paciorekj.github.io)
 
-## Explore My Work
-You can find this project (my resume) deployed at [https://paciorekJ.github.io](https://paciorekJ.github.io). Dive into my portfolio at [https://github.com/PaciorekJ](https://github.com/PaciorekJ). Here, you'll find a curated showcase of projects, each demonstrating my approach to solving problems and development. From interactive web applications to innovative use of web technologies, each project reflects my dedication to excellence in web development, or at least striving for it!
+## Overview
 
-## Connect With Me
-I'm always on the lookout for new and fresh challenges and opportunities. Whether you're interested in discussing potential projects or just want to say hi, feel free to reach out:
+This site is built as a focused developer portfolio for full-stack software engineering roles. It highlights my experience across web applications, mobile product development, backend/API work, integrations, deployment workflows, and client-facing software.
 
-- **Email**: paciorekjason@gmail.com
-- **LinkedIn**: [![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555)](https://linkedin.com/in/jasonpaciorek)
-- **GitHub**: [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PaciorekJ)
+The portfolio includes project case studies, technical strengths, a professional timeline, contact links, light/dark theming, and a downloadable one-page resume.
 
-Let's make something great together.
+## Highlights
+
+* **Portfolio landing page** with a concise overview of my work and technical focus.
+* **Project case studies** for client-facing SaaS work, Routine Gym Journal, FitnessBytes, and GameHWND.
+* **Downloadable one-page resume** generated from the site’s resume content.
+* **Responsive design** optimized for desktop, tablet, and mobile.
+* **Light/dark theme support** with a calm, technical visual style.
+* **GitHub Pages SPA routing support** so direct project links work correctly.
+* **Centralized content structure** for maintaining project, resume, skill, and contact data.
+
+## Featured Work
+
+### White-Label Membership Management Platform
+
+Client-facing SaaS platform built for a 12,000+ member organization. The platform supports secure onboarding, payments, identity verification, admin workflows, polling, document generation, background workers, and deployment operations.
+
+### Routine Gym Journal
+
+Active full-stack mobile product project focused on workout planning, guided training, local persistence, API-backed data, authentication, subscription readiness, and progress tracking.
+
+### FitnessBytes
+
+Full-stack social fitness platform with authentication, profiles, posts, replies, real-time messaging, notifications, and responsive UI.
+
+### GameHWND
+
+Game discovery platform built with React, TypeScript, React Query, Chakra UI, and the RAWG API.
+
+## Tech Stack
+
+* **Frontend:** React, TypeScript, React Router, Vite
+* **Styling:** CSS, custom theme variables, responsive layouts
+* **Animation/UI polish:** Framer Motion, icon libraries
+* **PDF generation:** React PDF tooling for resume export
+* **Deployment:** GitHub Pages, GitHub Actions
+* **Package manager:** pnpm
+
+## Local Development
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Build for production:
+
+```bash
+pnpm build
+```
+
+Preview production build:
+
+```bash
+pnpm preview
+```
+
+## Deployment
+
+The site deploys to GitHub Pages from the production build output.
+
+```bash
+pnpm build
+```
+
+The deployment workflow publishes the `dist` directory to the `gh-pages` branch.
+
+## Contact
+
+* **Email:** [paciorekjason@gmail.com](mailto:paciorekjason@gmail.com)
+* **GitHub:** [github.com/PaciorekJ](https://github.com/PaciorekJ)
+* **LinkedIn:** [linkedin.com/in/jasonpaciorek](https://www.linkedin.com/in/jasonpaciorek)
