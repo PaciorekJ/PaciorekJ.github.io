@@ -11,6 +11,7 @@ type ResumeDocumentProps = {
     exportMode?: boolean;
     contactLinks?: ContactLink[];
     sections?: ResumeSectionData[];
+    className?: string;
 };
 
 const ResumeDocument = ({
@@ -18,11 +19,12 @@ const ResumeDocument = ({
     exportMode = false,
     contactLinks = exportMode ? resumePdfContactLinks : resumeContactLinks,
     sections = resumeSections,
+    className = "",
 }: ResumeDocumentProps) => (
     <article
         className={`resume-document ${compact ? "resume-document--compact" : ""} ${
             exportMode ? "resume-document--export" : ""
-        }`}>
+        } ${className}`.trim()}>
         <header className="resume-document__header">
             <div>
                 <h1>Jason Paciorek</h1>
@@ -47,7 +49,11 @@ const ResumeDocument = ({
         </header>
 
         {sections.map((section) => (
-            <ResumeSection key={section.title} section={section} />
+            <ResumeSection
+                key={section.title}
+                section={section}
+                exportMode={exportMode}
+            />
         ))}
     </article>
 );

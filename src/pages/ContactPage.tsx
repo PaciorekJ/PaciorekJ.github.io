@@ -1,79 +1,82 @@
-import { ArrowRight, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import portraitJpg from "../assets/me.jpg";
 import portraitWebp from "../assets/me.webp";
 import ButtonLink from "../components/ButtonLink";
-import SectionHeading from "../components/SectionHeading";
+import PageShell from "../components/PageShell";
 
 const ContactPage = () => (
-    <section className="shell section">
-        <SectionHeading
-            eyebrow="Contact"
-            title="Open to full-time and contract software engineering roles"
-            description="If your team needs a developer who can move across frontend, backend, mobile, integrations, and deployment workflows, email is the best way to reach me."
-        />
+    <PageShell eyebrow="Contact" title="Contact" className="contact-page">
         <div className="contact-layout">
             <div className="content-card contact-card-primary">
-                <div className="contact-page__actions no-print">
-                    <div className="contact-card-photo-panel__copy">
-                        <h3>Quick links</h3>
-                        <p>
-                            Reach out by email, then use GitHub, LinkedIn, and
-                            my resume for a fast review of technical fit.
-                        </p>
-                    </div>
-                    <div className="contact-list contact-list--compact">
-                        <a
-                            href="mailto:paciorekjason@gmail.com"
-                            className="contact-row">
-                            <Mail size={18} aria-hidden="true" />
-                            <strong>Email</strong>
-                        </a>
+                <div className="contact-card__copy">
+                    <p className="contact-card__lead">
+                        Let&apos;s talk about software roles, contract work, or
+                        full-stack product development.
+                    </p>
+                    <p className="contact-card__support">
+                        I&apos;m open to full-time and contract software
+                        engineering opportunities. If my work looks aligned with
+                        what your team needs, email is the best way to start a
+                        conversation.
+                    </p>
+                </div>
+                <div className="contact-cta-group no-print">
+                    <ButtonLink
+                        href="mailto:paciorekjason@gmail.com"
+                        variant="primary">
+                        <Mail size={18} aria-hidden="true" /> Email Me
+                    </ButtonLink>
+                    <div className="contact-cta-grid">
                         <a
                             href="https://github.com/PaciorekJ"
                             target="_blank"
                             rel="noreferrer"
-                            className="contact-row">
+                            className="contact-row contact-row--button">
                             <FaGithub size={18} aria-hidden="true" />
-                            <strong>GitHub</strong>
+                            <span>GitHub</span>
                         </a>
                         <a
                             href="https://www.linkedin.com/in/jasonpaciorek"
                             target="_blank"
                             rel="noreferrer"
-                            className="contact-row">
+                            className="contact-row contact-row--button">
                             <FaLinkedin size={18} aria-hidden="true" />
-                            <strong>LinkedIn</strong>
+                            <span>LinkedIn</span>
                         </a>
                         <ButtonLink
                             to="/resume"
                             variant="ghost"
                             className="contact-row contact-row--button">
-                            Resume <ArrowRight size={16} aria-hidden="true" />
+                            Resume
                         </ButtonLink>
                     </div>
+                    <p className="contact-card__note">
+                        GitHub and LinkedIn are included for quick review; the
+                        resume is available as a one-page PDF.
+                    </p>
                 </div>
-                <p className="contact-card__note">
-                    Best way to reach me: email. GitHub and LinkedIn are
-                    included for a quick technical review.
-                </p>
             </div>
-            <div className="content-card content-card--accent no-print contact-card-photo-panel">
+            <aside className="content-card content-card--accent no-print contact-card-photo-panel">
                 <div className="contact-card-photo">
-                    <div className="contact-photo-frame">
+                    <div className="hero-card__portrait-wrap contact-photo-frame">
                         <picture>
                             <source srcSet={portraitWebp} type="image/webp" />
                             <img
-                                className="contact-photo"
+                                className="hero-card__portrait contact-photo"
                                 src={portraitJpg}
                                 alt="Jason Paciorek"
+                                width="640"
+                                height="640"
+                                loading="lazy"
+                                decoding="async"
                             />
                         </picture>
                     </div>
                 </div>
-            </div>
+            </aside>
         </div>
-    </section>
+    </PageShell>
 );
 
 export default ContactPage;

@@ -1,62 +1,37 @@
+import { pdf } from "@react-pdf/renderer";
 import { Download } from "lucide-react";
-import { useRef } from "react";
-import generatePDF, { Margin, Resolution } from "react-to-pdf";
 import ButtonLink from "../components/ButtonLink";
+import PageShell from "../components/PageShell";
 import ResumeDocument from "../components/ResumeDocument";
-import ResumePdfExport from "../components/ResumePdfExport";
-import SectionHeading from "../components/SectionHeading";
+import ResumePdfDocument from "../components/ResumePdfDocument";
 
 const ResumePage = () => {
-    const pdfTargetRef = useRef<HTMLDivElement>(null);
+    const handleDownloadPdf = async () => {
+        const blob = await pdf(<ResumePdfDocument />).toBlob();
+        const objectUrl = URL.createObjectURL(blob);
+        const link = document.createElement("a");
 
-    const handleDownloadPdf = () => {
-        if (!pdfTargetRef.current) {
-            return;
-        }
+        link.href = objectUrl;
+        link.download = "Jason-Paciorek-Resume.pdf";
+        link.click();
 
-        generatePDF(pdfTargetRef, {
-            filename: "Jason-Paciorek-Resume.pdf",
-            method: "save",
-            resolution: Resolution.HIGH,
-            page: {
-                margin: Margin.SMALL,
-                format: "letter",
-                orientation: "portrait",
-            },
-            overrides: {
-                pdf: {
-                    compress: true,
-                },
-                canvas: {
-                    useCORS: true,
-                },
-            },
-        });
+        URL.revokeObjectURL(objectUrl);
     };
 
     return (
-        <section className="shell section resume-page">
-            <div className="resume-page__toolbar no-print">
-                <SectionHeading
-                    eyebrow="Resume"
-                    title="Resume"
-                    description="A focused one-page view of my full-stack, mobile, API, integration, and deployment experience."
-                />
-                <div className="resume-page__actions">
+        <PageShell
+            eyebrow="Resume"
+            title="Resume"
+            description="Focused one-page software engineering resume."
+            actions={
+                <div className="resume-page__actions no-print">
                     <ButtonLink variant="primary" onClick={handleDownloadPdf}>
                         <Download size={18} aria-hidden="true" /> Download PDF
                     </ButtonLink>
                 </div>
-            </div>
-
+            }>
             <ResumeDocument />
-
-            <div className="resume-pdf-export" aria-hidden="true">
-                <div ref={pdfTargetRef}>
-                    <ResumePdfExport />
-                </div>
-            </div>
-        </section>
+        </PageShell>
     );
 };
 

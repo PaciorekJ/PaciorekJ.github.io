@@ -1,15 +1,13 @@
+import PageShell from "../components/PageShell";
 import ProjectCard from "../components/ProjectCard";
 import SectionHeading from "../components/SectionHeading";
 import { earlierProjects, featuredProjects } from "../data/site";
 
 const ProjectsPage = () => (
-    <section className="shell section">
-        <SectionHeading
-            eyebrow="Projects"
-            title="Projects"
-            description="Selected work showing full-stack development, mobile architecture, integrations, and deployment ownership."
-        />
-
+    <PageShell
+        eyebrow="Projects"
+        title="Projects"
+        description="Selected work showing full-stack development, mobile architecture, integrations, and deployment ownership.">
         <section className="section-block">
             <SectionHeading title="Featured work" />
             <div className="card-grid card-grid--projects">
@@ -27,7 +25,7 @@ const ProjectsPage = () => (
                 ))}
             </div>
         </section>
-    </section>
+    </PageShell>
 );
 
 export default ProjectsPage;

@@ -1,13 +1,12 @@
-import { Outlet, useLocation } from "react-router";
+import { Outlet } from "react-router";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import ScrollToTop from "./ScrollToTop";
 
 const Layout = () => {
-    const location = useLocation();
-    const isResumePage = location.pathname === "/resume";
-
     return (
-        <div className={`app-shell ${isResumePage ? "app-shell--resume" : ""}`}>
+        <div className={`app-shell`}>
+            <ScrollToTop />
             <Navbar />
             <main className="page-main">
                 <Outlet />

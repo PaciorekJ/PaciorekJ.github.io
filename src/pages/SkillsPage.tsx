@@ -1,14 +1,12 @@
-import SectionHeading from "../components/SectionHeading";
+import PageShell from "../components/PageShell";
 import SkillBar from "../components/SkillBar";
 import { skillCategories } from "../data/site";
 
 const SkillsPage = () => (
-    <section className="shell section">
-        <SectionHeading
-            eyebrow="Skills"
-            title="Technical Strengths"
-            description="A practical map of the tools I use to build web, mobile, backend, and deployment workflows."
-        />
+    <PageShell
+        eyebrow="Skills"
+        title="Technical Strengths"
+        description="A practical map of the tools I use to build web, mobile, backend, and deployment workflows.">
         <div className="card-grid">
             {skillCategories.map((category) => (
                 <section className="content-card" key={category.title}>
@@ -25,7 +23,7 @@ const SkillsPage = () => (
                 </section>
             ))}
         </div>
-    </section>
+    </PageShell>
 );
 
 export default SkillsPage;

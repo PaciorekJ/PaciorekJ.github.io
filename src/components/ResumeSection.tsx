@@ -2,15 +2,12 @@ import { Link } from "react-router";
 import { ResumeSectionData } from "../types/portfolio";
 import RichText from "./RichText";
 
-const handleResumeProjectNavigation = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-};
-
 type ResumeSectionProps = {
     section: ResumeSectionData;
+    exportMode?: boolean;
 };
 
-const ResumeSection = ({ section }: ResumeSectionProps) => (
+const ResumeSection = ({ section, exportMode = false }: ResumeSectionProps) => (
     <section className="resume-section">
         <h2>{section.title}</h2>
         {section.content?.map((line) => (
@@ -28,8 +25,7 @@ const ResumeSection = ({ section }: ResumeSectionProps) => (
                             {entry.href ? (
                                 <Link
                                     to={entry.href}
-                                    className="resume-entry__link"
-                                    onClick={handleResumeProjectNavigation}>
+                                    className="resume-entry__link">
                                     {entry.title}
                                 </Link>
                             ) : (
@@ -44,6 +40,9 @@ const ResumeSection = ({ section }: ResumeSectionProps) => (
                     </div>
                     {entry.meta ? <span>{entry.meta}</span> : null}
                 </div>
+                {exportMode && entry.pdfUrl ? (
+                    <p className="resume-entry__pdf-url">{entry.pdfUrl}</p>
+                ) : null}
                 {entry.bullets ? (
                     <ul>
                         {entry.bullets.map((bullet) => (
