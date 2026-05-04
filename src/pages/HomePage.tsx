@@ -30,29 +30,9 @@ const HomePage = () => {
         <div>
             <section className="hero shell section">
                 <div className="hero-main">
-                    <motion.div className="hero__content" {...heroAnimation}>
+                    <motion.div className="hero__intro" {...heroAnimation}>
                         <p className="eyebrow">Jason Paciorek</p>
                         <h1>Full-Stack Developer</h1>
-                        <p className="hero__summary">
-                            <RichText text={heroSummary} />
-                        </p>
-                        <p className="hero__support">
-                            <RichText text={heroSupportLine} />
-                        </p>
-                        <div className="hero__actions no-print">
-                            <ButtonLink to="/resume" variant="primary">
-                                View Resume
-                            </ButtonLink>
-                            <ButtonLink
-                                href="mailto:paciorekjason@gmail.com"
-                                variant="secondary">
-                                <Mail size={18} aria-hidden="true" /> Email Me
-                            </ButtonLink>
-                            <ButtonLink to="/projects" variant="ghost">
-                                View Projects{" "}
-                                <ArrowRight size={18} aria-hidden="true" />
-                            </ButtonLink>
-                        </div>
                     </motion.div>
                     <motion.div className="hero-card" {...heroAnimation}>
                         <div className="hero-card__inner">
@@ -75,6 +55,28 @@ const HomePage = () => {
                             </div>
                         </div>
                     </motion.div>
+                    <motion.div className="hero__body" {...heroAnimation}>
+                        <p className="hero__summary">
+                            <RichText text={heroSummary} />
+                        </p>
+                        <p className="hero__support">
+                            <RichText text={heroSupportLine} />
+                        </p>
+                    </motion.div>
+                </div>
+                <div className="hero__actions no-print">
+                    <ButtonLink to="/resume" variant="primary">
+                        View Resume
+                    </ButtonLink>
+                    <ButtonLink
+                        href="mailto:paciorekjason@gmail.com"
+                        variant="secondary">
+                        <Mail size={18} aria-hidden="true" /> Email Me
+                    </ButtonLink>
+                    <ButtonLink to="/projects" variant="ghost">
+                        View Projects{" "}
+                        <ArrowRight size={18} aria-hidden="true" />
+                    </ButtonLink>
                 </div>
                 <motion.div className="hero__proofs" {...heroAnimation}>
                     <div className="hero__proofs-header">
