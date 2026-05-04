@@ -6,8 +6,8 @@ const ExperiencePage = () => (
     <section className="shell section">
         <SectionHeading
             eyebrow="Experience"
-            title="A concise timeline of recent professional and project milestones"
-            description="Polished on-screen timeline for recruiters; the printable resume remains the ATS-focused source of truth."
+            title="Professional timeline"
+            description="A concise view of recent software work, active product development, education, and the path into full-stack engineering."
         />
         <Timeline items={timelineEntries} />
     </section>

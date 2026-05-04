@@ -1,12 +1,17 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Download, Mail, Printer } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
+import portraitJpg from "../assets/me.jpg";
+import portraitWebp from "../assets/me.webp";
 import ButtonLink from "../components/ButtonLink";
 import ProjectCard from "../components/ProjectCard";
+import RichText from "../components/RichText";
 import SectionHeading from "../components/SectionHeading";
 import {
     aboutSummary,
+    featuredProjects,
     heroSummary,
-    projectPreview,
+    heroSupportLine,
+    homeProofChips,
     technicalStrengths,
 } from "../data/site";
 
@@ -25,12 +30,16 @@ const HomePage = () => {
             <section className="hero shell section">
                 <motion.div className="hero__content" {...heroAnimation}>
                     <p className="eyebrow">Jason Paciorek</p>
-                    <h1>Full-Stack TypeScript Developer</h1>
-                    <p className="hero__summary">{heroSummary}</p>
+                    <h1>Full-Stack Developer</h1>
+                    <p className="hero__summary">
+                        <RichText text={heroSummary} />
+                    </p>
+                    <p className="hero__support">
+                        <RichText text={heroSupportLine} />
+                    </p>
                     <div className="hero__actions no-print">
                         <ButtonLink to="/resume" variant="primary">
-                            <Download size={18} aria-hidden="true" /> Download
-                            Resume
+                            View Resume
                         </ButtonLink>
                         <ButtonLink
                             href="mailto:paciorekjason@gmail.com"
@@ -42,28 +51,37 @@ const HomePage = () => {
                             <ArrowRight size={18} aria-hidden="true" />
                         </ButtonLink>
                     </div>
-                    <div className="hero__actions hero__actions--print no-print">
-                        <ButtonLink to="/resume" variant="ghost">
-                            <Printer size={18} aria-hidden="true" /> Print
-                            Resume
-                        </ButtonLink>
-                    </div>
                 </motion.div>
                 <motion.div className="hero-card" {...heroAnimation}>
                     <div className="hero-card__inner">
-                        <div className="hero-card__avatar" aria-hidden="true">
-                            JP
+                        <div className="hero-card__portrait-wrap no-print">
+                            <picture>
+                                <source
+                                    srcSet={portraitWebp}
+                                    type="image/webp"
+                                />
+                                <img
+                                    className="hero-card__portrait"
+                                    src={portraitJpg}
+                                    alt="Jason Paciorek"
+                                />
+                            </picture>
                         </div>
-                        <h2>Recruiter-friendly snapshot</h2>
-                        <ul>
-                            <li>Full-stack TypeScript focus</li>
-                            <li>Client-facing production workflows</li>
-                            <li>React, Node.js, MongoDB, Docker, Stripe</li>
-                            <li>
-                                Mobile product architecture with React Native
-                                and Expo
-                            </li>
-                        </ul>
+                    </div>
+                </motion.div>
+                <motion.div className="hero__proofs" {...heroAnimation}>
+                    <div className="hero__proofs-header">
+                        <p className="eyebrow">What I bring</p>
+                    </div>
+                    <div className="proof-chip-grid proof-chip-grid--hero">
+                        {homeProofChips.map((chip) => (
+                            <div className="proof-chip" key={chip.title}>
+                                <p>
+                                    <RichText text={chip.title} />
+                                </p>
+                                <span>{chip.description}</span>
+                            </div>
+                        ))}
                     </div>
                 </motion.div>
             </section>
@@ -71,21 +89,23 @@ const HomePage = () => {
             <section className="shell section">
                 <SectionHeading
                     eyebrow="About"
-                    title="Production-focused software engineering"
+                    title="Software built around real workflows"
                 />
                 <div className="content-card">
-                    <p>{aboutSummary}</p>
+                    <p>
+                        <RichText text={aboutSummary} />
+                    </p>
                 </div>
             </section>
 
             <section className="shell section">
                 <SectionHeading
                     eyebrow="Featured projects"
-                    title="Recent work and active development"
-                    description="Focused project snapshots with accurate status labels and clear full-stack positioning."
+                    title="Selected work with the strongest interview signal"
+                    description="Two projects that show full-stack delivery, mobile architecture, integrations, and deployment ownership."
                 />
                 <div className="card-grid card-grid--projects">
-                    {projectPreview.map((project) => (
+                    {featuredProjects.map((project) => (
                         <ProjectCard key={project.slug} project={project} />
                     ))}
                 </div>
@@ -93,13 +113,16 @@ const HomePage = () => {
 
             <section className="shell section">
                 <SectionHeading
-                    eyebrow="Technical strengths"
-                    title="What I’m strongest at"
+                    eyebrow="Core strengths"
+                    title="Where I add the most value"
                 />
                 <div className="strength-grid">
                     {technicalStrengths.map((strength) => (
-                        <div className="strength-card" key={strength}>
-                            <h3>{strength}</h3>
+                        <div className="strength-card" key={strength.title}>
+                            <h3>
+                                <RichText text={strength.title} />
+                            </h3>
+                            <p>{strength.description}</p>
                         </div>
                     ))}
                 </div>

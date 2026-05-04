@@ -6,8 +6,8 @@ const SkillsPage = () => (
     <section className="shell section">
         <SectionHeading
             eyebrow="Skills"
-            title="Technical strengths grouped for recruiter readability"
-            description="Portfolio-only ratings to communicate relative confidence and recent hands-on depth."
+            title="Technical Strengths"
+            description="A practical map of the tools I use to build web, mobile, backend, and deployment workflows."
         />
         <div className="card-grid">
             {skillCategories.map((category) => (

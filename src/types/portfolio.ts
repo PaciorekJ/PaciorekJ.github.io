@@ -14,7 +14,18 @@ export type ProjectStatus =
     | "Client SaaS Project"
     | "Active Development"
     | "Completed Portfolio Project"
+    | "Completed Portfolio Project / On Hiatus"
     | "Independent Product Project — Active Development";
+
+export type ProjectCardItem = {
+    title: string;
+    description: string;
+};
+
+export type ProjectDemo = {
+    label: string;
+    description: string;
+};
 
 export type Project = {
     slug: string;
@@ -23,14 +34,19 @@ export type Project = {
     description: string;
     shortDescription: string;
     tech: string[];
-    href: string;
+    href?: string;
+    ctaLabel?: string;
+    external?: boolean;
+    caseStudy?: boolean;
     featured?: boolean;
-    highlights?: string[];
-    architecture?: string[];
-    ownership?: string[];
-    demos?: string[];
     subtitle?: string;
-    currentStatus?: string;
+    impact?: ProjectCardItem[];
+    highlights?: string[];
+    engineering?: string[];
+    ownership?: string[];
+    systemOverview?: string[];
+    demos?: ProjectDemo[];
+    note?: string;
 };
 
 export type SkillCategory = {
@@ -48,6 +64,7 @@ export type ResumeEntry = {
     title: string;
     subtitle?: string;
     meta?: string;
+    href?: string;
     bullets?: string[];
 };
 
