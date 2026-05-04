@@ -65,6 +65,7 @@ export type ResumeEntry = {
     subtitle?: string;
     meta?: string;
     href?: string;
+    pdfUrl?: string;
     bullets?: string[];
 };
 

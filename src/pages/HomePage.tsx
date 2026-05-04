@@ -7,6 +7,7 @@ import ProjectCard from "../components/ProjectCard";
 import RichText from "../components/RichText";
 import SectionHeading from "../components/SectionHeading";
 import {
+    aboutHighlights,
     aboutSummary,
     featuredProjects,
     heroSummary,
@@ -28,47 +29,53 @@ const HomePage = () => {
     return (
         <div>
             <section className="hero shell section">
-                <motion.div className="hero__content" {...heroAnimation}>
-                    <p className="eyebrow">Jason Paciorek</p>
-                    <h1>Full-Stack Developer</h1>
-                    <p className="hero__summary">
-                        <RichText text={heroSummary} />
-                    </p>
-                    <p className="hero__support">
-                        <RichText text={heroSupportLine} />
-                    </p>
-                    <div className="hero__actions no-print">
-                        <ButtonLink to="/resume" variant="primary">
-                            View Resume
-                        </ButtonLink>
-                        <ButtonLink
-                            href="mailto:paciorekjason@gmail.com"
-                            variant="secondary">
-                            <Mail size={18} aria-hidden="true" /> Email Me
-                        </ButtonLink>
-                        <ButtonLink to="/projects" variant="ghost">
-                            View Projects{" "}
-                            <ArrowRight size={18} aria-hidden="true" />
-                        </ButtonLink>
-                    </div>
-                </motion.div>
-                <motion.div className="hero-card" {...heroAnimation}>
-                    <div className="hero-card__inner">
-                        <div className="hero-card__portrait-wrap no-print">
-                            <picture>
-                                <source
-                                    srcSet={portraitWebp}
-                                    type="image/webp"
-                                />
-                                <img
-                                    className="hero-card__portrait"
-                                    src={portraitJpg}
-                                    alt="Jason Paciorek"
-                                />
-                            </picture>
+                <div className="hero-main">
+                    <motion.div className="hero__content" {...heroAnimation}>
+                        <p className="eyebrow">Jason Paciorek</p>
+                        <h1>Full-Stack Developer</h1>
+                        <p className="hero__summary">
+                            <RichText text={heroSummary} />
+                        </p>
+                        <p className="hero__support">
+                            <RichText text={heroSupportLine} />
+                        </p>
+                        <div className="hero__actions no-print">
+                            <ButtonLink to="/resume" variant="primary">
+                                View Resume
+                            </ButtonLink>
+                            <ButtonLink
+                                href="mailto:paciorekjason@gmail.com"
+                                variant="secondary">
+                                <Mail size={18} aria-hidden="true" /> Email Me
+                            </ButtonLink>
+                            <ButtonLink to="/projects" variant="ghost">
+                                View Projects{" "}
+                                <ArrowRight size={18} aria-hidden="true" />
+                            </ButtonLink>
                         </div>
-                    </div>
-                </motion.div>
+                    </motion.div>
+                    <motion.div className="hero-card" {...heroAnimation}>
+                        <div className="hero-card__inner">
+                            <div className="hero-card__portrait-wrap no-print">
+                                <picture>
+                                    <source
+                                        srcSet={portraitWebp}
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        className="hero-card__portrait"
+                                        src={portraitJpg}
+                                        alt="Jason Paciorek"
+                                        width="640"
+                                        height="640"
+                                        loading="eager"
+                                        decoding="async"
+                                    />
+                                </picture>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
                 <motion.div className="hero__proofs" {...heroAnimation}>
                     <div className="hero__proofs-header">
                         <p className="eyebrow">What I bring</p>
@@ -95,6 +102,16 @@ const HomePage = () => {
                     <p>
                         <RichText text={aboutSummary} />
                     </p>
+                    <div className="about-highlight-grid">
+                        {aboutHighlights.map((item) => (
+                            <div className="about-highlight" key={item.title}>
+                                <h3>
+                                    <RichText text={item.title} />
+                                </h3>
+                                <p>{item.description}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 

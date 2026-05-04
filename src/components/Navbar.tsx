@@ -50,21 +50,6 @@ const Navbar = () => {
                             {item.label}
                         </NavLink>
                     ))}
-                    <button
-                        className="theme-toggle theme-toggle--mobile"
-                        type="button"
-                        onClick={toggleTheme}
-                        aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}>
-                        {theme === "light" ? (
-                            <>
-                                <Moon size={18} aria-hidden="true" /> Dark mode
-                            </>
-                        ) : (
-                            <>
-                                <Sun size={18} aria-hidden="true" /> Light mode
-                            </>
-                        )}
-                    </button>
                 </nav>
                 <div className="site-header__controls">
                     <button

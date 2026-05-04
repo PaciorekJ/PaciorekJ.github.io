@@ -72,13 +72,7 @@ body {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
-    background:
-        radial-gradient(
-            circle at top,
-            color-mix(in srgb, var(--accent) 18%, transparent),
-            transparent 30%
-        ),
-        var(--background);
+    background: var(--background);
     color: var(--text);
 }
 
@@ -127,6 +121,11 @@ button:focus-visible {
 .page-main {
     flex: 1;
     padding-bottom: 3rem;
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--background-soft) 84%, var(--background)) 0%,
+        var(--background) 18rem
+    );
 }
 
 .shell {
@@ -135,7 +134,34 @@ button:focus-visible {
 }
 
 .section {
-    padding: 3.5rem 0;
+    padding: clamp(3rem, 6vw, 5rem) 0;
+}
+
+.page-shell {
+    padding-top: clamp(2.75rem, 5vw, 5rem);
+    padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.page-shell__header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.page-shell__header .section-heading {
+    margin-bottom: 0;
+}
+
+.page-shell__actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.page-shell__content {
+    display: grid;
+    gap: 0;
 }
 
 .eyebrow,
@@ -292,10 +318,16 @@ span {
 
 .hero {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 1.35rem;
-    align-items: start;
-    padding-top: 2.5rem;
+    padding-top: clamp(2.5rem, 5vw, 4.25rem);
+}
+
+.hero-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(2rem, 5vw, 4rem);
+    flex-wrap: wrap-reverse;
 }
 
 .hero__content,
@@ -314,6 +346,7 @@ span {
 }
 
 .hero__content {
+    flex: 1 1 min(100%, 34rem);
     padding: 1.25rem 0.25rem 0.5rem 0;
     background: transparent;
     border: none;
@@ -351,51 +384,57 @@ span {
 }
 
 .hero-card {
-    padding: 1px;
-    background: linear-gradient(
-        180deg,
-        color-mix(in srgb, var(--accent) 40%, transparent),
-        color-mix(in srgb, var(--secondary) 24%, transparent)
-    );
+    display: flex;
+    flex: 0 1 auto;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 .hero-card__inner {
-    height: 100%;
-    padding: 1rem;
-    border-radius: calc(var(--radius) - 1px);
-    background: linear-gradient(
-        180deg,
-        var(--surface-elevated),
-        var(--surface)
-    );
-    min-height: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
 }
 
-.hero-card__portrait-wrap,
-.contact-photo-frame {
-    position: relative;
-    padding: 0.4rem;
-    border-radius: 28px;
-    background: linear-gradient(
-        135deg,
-        color-mix(in srgb, var(--accent) 28%, transparent),
-        color-mix(in srgb, var(--secondary) 20%, transparent)
-    );
+.hero-card__portrait-wrap {
+    width: min(74vw, 260px);
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid color-mix(in srgb, var(--border) 90%, transparent);
+    background: color-mix(in srgb, var(--surface-elevated) 92%, transparent);
     box-shadow: var(--shadow-soft);
 }
 
-.hero-card__portrait,
-.contact-photo {
+.hero-card__portrait-wrap picture,
+.contact-photo-frame picture {
+    display: block;
     width: 100%;
+    height: 100%;
+}
+
+.hero-card__portrait {
+    width: 100%;
+    height: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    object-position: center;
+}
+
+.contact-photo-frame {
+    width: min(100%, clamp(200px, 22vw, 260px));
+}
+
+.contact-photo {
+    width: 100%;
     object-position: center 18%;
-    border-radius: 24px;
-    border: 1px solid
-        color-mix(in srgb, var(--surface-elevated) 86%, transparent);
 }
 
 .proof-chip-grid,
@@ -480,7 +519,7 @@ span {
 }
 
 .section-heading {
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1.25rem, 3vw, 2rem);
     max-width: 70ch;
 }
 
@@ -505,6 +544,28 @@ span {
 
 .content-card p + p {
     margin-top: 1rem;
+}
+
+.about-highlight-grid {
+    display: grid;
+    gap: 0.9rem;
+    margin-top: 1.25rem;
+}
+
+.about-highlight {
+    padding: 1rem 1.05rem;
+    border-radius: 18px;
+    border: 1px solid color-mix(in srgb, var(--border) 90%, transparent);
+    background: color-mix(in srgb, var(--surface) 84%, transparent);
+}
+
+.about-highlight h3 {
+    color: var(--text-strong);
+    font-size: 1rem;
+}
+
+.about-highlight p {
+    margin-top: 0.5rem;
 }
 
 .card-grid {
@@ -766,15 +827,16 @@ span {
 }
 
 .section-block + .section-block {
-    margin-top: 2rem;
+    margin-top: clamp(2.5rem, 5vw, 4rem);
 }
 
 .resume-page {
-    padding-top: 2rem;
+    padding-top: 0;
 }
 
-.resume-page .section-heading {
-    margin-bottom: 0;
+.case-study {
+    padding-top: clamp(2.75rem, 5vw, 5rem);
+    padding-bottom: clamp(3rem, 6vw, 5rem);
 }
 
 .resume-page__actions,
@@ -784,10 +846,6 @@ span {
     flex-wrap: wrap;
 }
 
-.resume-page__toolbar .resume-page__actions {
-    margin-top: 0.25rem;
-}
-
 .resume-document {
     max-width: 960px;
     margin: 0 auto;
@@ -795,13 +853,18 @@ span {
 }
 
 .resume-document--compact {
-    width: 8in;
-    max-width: 8in;
-    padding: 0.34in 0.38in;
+    width: 8.5in;
+    max-width: 8.5in;
+    min-height: 11in;
+    padding: 0.42in 0.46in;
     border-radius: 0;
     box-shadow: none;
     border: 0;
     background: #fff;
+}
+
+.resume-document--pdf-page {
+    overflow: hidden;
 }
 
 .resume-document--export {
@@ -817,45 +880,51 @@ span {
 }
 
 .resume-document--compact .resume-section + .resume-section {
-    margin-top: 0.42rem;
+    margin-top: 0.4rem;
     padding-top: 0.34rem;
 }
 
 .resume-document--compact .resume-section h2 {
-    font-size: 0.84rem;
+    font-size: 0.83rem;
     margin-bottom: 0.28rem;
+    line-height: 1.15;
 }
 
 .resume-document--compact p,
 .resume-document--compact li,
 .resume-document--compact span,
 .resume-document--compact a {
-    font-size: 0.7rem;
-    line-height: 1.14;
+    font-size: 0.715rem;
+    line-height: 1.26;
 }
 
 .resume-document--compact h1 {
-    font-size: 1.28rem;
-    line-height: 1;
+    font-size: 1.34rem;
+    line-height: 1.02;
 }
 
 .resume-document--compact h3 {
-    font-size: 0.77rem;
-    line-height: 1.15;
+    font-size: 0.79rem;
+    line-height: 1.18;
 }
 
 .resume-document--compact .resume-entry + .resume-entry {
-    margin-top: 0.24rem;
+    margin-top: 0.18rem;
 }
 
 .resume-document--compact .resume-entry ul,
 .resume-document--compact .bullet-list,
 .resume-document--compact .resume-section p + p {
-    gap: 0.1rem;
+    gap: 0.08rem;
 }
 
 .resume-document--compact .resume-entry ul {
     padding-left: 0.88rem;
+}
+
+.resume-document--compact .resume-entry__pdf-url {
+    font-size: 0.66rem;
+    line-height: 1.2;
 }
 
 .resume-pdf-export {
@@ -874,6 +943,7 @@ span {
 
 .resume-pdf-export__page {
     width: 8.5in;
+    min-height: 11in;
     padding: 0;
     background: #fff;
 }
@@ -917,10 +987,31 @@ span {
 }
 
 .resume-document--export .resume-document__header {
-    gap: 0.3rem 0.75rem;
-    align-items: baseline;
-    margin-bottom: 0.35rem;
-    padding-bottom: 0.28rem;
+    gap: 0.35rem 0.75rem;
+    align-items: flex-start;
+    margin-bottom: 0.42rem;
+    padding-bottom: 0.3rem;
+}
+
+.resume-document--export .resume-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.resume-document--export .resume-section h2 {
+    margin-bottom: 0.3rem;
+    line-height: 1.15;
+}
+
+.resume-document--export .resume-entry__header {
+    margin-bottom: 0.24rem;
+    gap: 0.3rem 0.6rem;
+}
+
+.resume-document--export .resume-entry__pdf-url {
+    margin-top: 0;
+    margin-bottom: 0.12rem;
+    line-height: 1.2;
 }
 
 .resume-document--export .resume-document__header p {
@@ -983,6 +1074,12 @@ span {
     color: var(--accent-strong);
 }
 
+.resume-entry__pdf-url {
+    margin-top: 0.1rem;
+    word-break: break-all;
+    color: var(--text-muted);
+}
+
 .resume-document--export .resume-section h2,
 .resume-document--export .resume-entry__header h3,
 .resume-document--export strong {
@@ -1014,41 +1111,80 @@ span {
 }
 
 .contact-list--compact {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, auto));
+    gap: 0.75rem;
+    align-items: stretch;
+}
+
+.contact-cta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.75rem;
 }
 
 .contact-row {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 0.65rem;
     padding: 0.85rem 1rem;
     border-radius: 16px;
     background: color-mix(in srgb, var(--surface) 84%, transparent);
     border: 1px solid var(--border);
+    min-height: 3.25rem;
 }
 
+.contact-row--button {
+    font-weight: 700;
+    color: var(--accent-strong);
+    box-shadow: var(--shadow-soft);
+}
+
+.contact-row--button:hover {
+    transform: translateY(-2px);
+    background: color-mix(
+        in srgb,
+        var(--accent-soft) 38%,
+        var(--surface-elevated)
+    );
+    border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+    box-shadow: 0 16px 32px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.contact-row span,
 .contact-row strong {
     color: var(--text-strong);
 }
 
-.contact-row--button {
-    justify-content: center;
-}
-
 .contact-card-primary {
     display: grid;
-    gap: 1.25rem;
+    gap: 1.5rem;
+    align-content: start;
 }
 
-.contact-card__intro p {
+.contact-card__copy {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.contact-card__lead {
     color: var(--text);
-    font-size: 1.03rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.contact-card__support {
+    max-width: 52ch;
+    font-size: 1rem;
 }
 
 .contact-card__note {
     font-size: 0.96rem;
+}
+
+.contact-cta-group {
+    display: grid;
+    gap: 1rem;
 }
 
 .contact-card-photo {
@@ -1068,15 +1204,8 @@ span {
 .contact-card-photo-panel {
     display: grid;
     align-content: start;
-    gap: 1rem;
-}
-
-.contact-card-photo-panel__copy h3 {
-    color: var(--text-strong);
-}
-
-.contact-card-photo-panel__copy p {
-    margin-top: 0.6rem;
+    justify-items: center;
+    padding-block: clamp(1.5rem, 3vw, 2rem);
 }
 
 .site-footer {
@@ -1132,13 +1261,23 @@ span {
         display: none;
     }
 
-    .hero {
-        grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.7fr);
-        gap: 1.8rem 2rem;
+    .hero-card {
+        justify-content: flex-end;
+    }
+
+    .hero-card__portrait-wrap {
+        width: clamp(220px, 26vw, 300px);
+    }
+
+    .page-shell__header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
     }
 
     .proof-chip-grid,
-    .impact-grid {
+    .impact-grid,
+    .about-highlight-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -1164,10 +1303,14 @@ span {
         align-items: start;
     }
 
-    .resume-page__toolbar {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-end;
+    .contact-layout {
+        align-items: stretch;
+        grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.75fr);
+    }
+
+    .contact-card-primary,
+    .contact-card-photo-panel {
+        min-height: 100%;
     }
 }
 
@@ -1176,6 +1319,7 @@ span {
     .resume-entry__header,
     .site-footer__inner,
     .demo-placeholder,
+    .page-shell__header,
     .resume-page__actions,
     .contact-page__actions {
         flex-direction: column;
@@ -1190,9 +1334,30 @@ span {
         grid-template-columns: 1fr;
     }
 
+    .hero-main {
+        justify-content: center;
+    }
+
+    .hero__content,
+    .hero-card {
+        flex-basis: 100%;
+    }
+
+    .hero-card {
+        order: -1;
+    }
+
+    .about-highlight-grid,
+    .about-highlight-grid--compact {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-cta-grid {
+        grid-template-columns: 1fr;
+    }
+
     .contact-row {
-        flex-direction: row;
-        align-items: center;
+        width: 100%;
     }
 }
 

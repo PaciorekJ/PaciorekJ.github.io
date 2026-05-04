@@ -2,10 +2,13 @@ import {
     ContactLink,
     NavItem,
     Project,
+    ResumeEntry,
     ResumeSectionData,
     SkillCategory,
     TimelineEntry,
 } from "../types/portfolio";
+
+export const portfolioBaseUrl = "https://paciorekj.github.io";
 
 export const navItems: NavItem[] = [
     { label: "Home", to: "/" },
@@ -97,7 +100,25 @@ export const homeProofChips = [
 ];
 
 export const aboutSummary =
-    "I build software for real workflows: onboarding, internal tools, mobile experiences, APIs, integrations, and deployment operations. My recent client work supports a membership organization with **12,000+ members**, while my active mobile product work focuses on workout planning, guided training, local persistence, and API-backed progress tracking.";
+    "I build software that connects product workflows to reliable engineering: user onboarding, internal tools, mobile experiences, **REST APIs**, integrations, and deployment automation.";
+
+export const aboutHighlights = [
+    {
+        title: "**12,000+ member organization**",
+        description:
+            "Supported secure registration, payments, identity verification, and admin workflows for a real membership operation.",
+    },
+    {
+        title: "**Mobile product architecture**",
+        description:
+            "Built workout planning, guided training, local persistence, and API-backed progress tracking into an active React Native product.",
+    },
+    {
+        title: "**Developer workflow tooling**",
+        description:
+            "Built a custom MCP server for repository-aware RAG, codebase auditing, and repeatable engineering workflows.",
+    },
+];
 
 export const technicalStrengths = [
     {
@@ -516,7 +537,8 @@ export const skillCategories: SkillCategory[] = [
             { name: "Jest", value: 7.5 },
             { name: "MSW", value: 7 },
             { name: "Spec-Driven Development", value: 8.5 },
-            { name: "AI-Assisted Development with Cline", value: 8.5 },
+            { name: "AI-Assisted Development", value: 8.5 },
+            { name: "Custom MCP / RAG Tooling", value: 7.5 },
         ],
     },
     {
@@ -563,6 +585,50 @@ export const timelineEntries: TimelineEntry[] = [
     },
 ];
 
+const resumeProjectEntries: ResumeEntry[] = [
+    {
+        title: "White-Label Membership Management Platform — Client SaaS Project",
+        href: "/projects/white-label-membership-platform",
+        pdfUrl: `${portfolioBaseUrl}/projects/white-label-membership-platform`,
+        bullets: [
+            "Built a full-stack membership platform for onboarding, payments, identity verification, documents, admin workflows, and deployment automation supporting a **12,000+ member organization**.",
+            "Integrated verification, payment, signatures, generated PDFs, email delivery, and **authentication/authorization-aware** operations into one controlled workflow.",
+        ],
+    },
+    {
+        title: "Routine Gym Journal — Independent Product Project",
+        meta: "Active Development",
+        href: "/projects/routine-gym-journal",
+        pdfUrl: `${portfolioBaseUrl}/projects/routine-gym-journal`,
+        bullets: [
+            "Built a **React Native fitness app** with workout planning, guided execution, API-backed data, authentication, local persistence, and stats dashboards.",
+            "Designed shared **TypeScript** and **OpenAPI-backed APIs** across mobile and backend services using Zod-based validation.",
+            "Developed reusable mobile API clients and backend services for workouts, programs, exercises, sharing, settings, and progress tracking.",
+            "Built local persistence with Expo SQLite and Drizzle to support draft state and in-progress workout sessions.",
+            "Used Jest and MSW to test mobile clients, hooks, UI flows, and persistence behavior.",
+        ],
+    },
+    {
+        title: "FitnessBytes — Full-Stack Social Fitness Platform",
+        href: "/projects/fitnessbytes",
+        pdfUrl: `${portfolioBaseUrl}/projects/fitnessbytes`,
+        subtitle: "React, Node.js, Express, MongoDB, Passport.js, Socket.IO",
+        bullets: [
+            "Built a full-stack social fitness platform with authentication, profiles, content interactions, responsive UI, and real-time messaging.",
+            "Implemented backend APIs and real-time features with Node.js, Express, MongoDB, Passport.js, and Socket.IO.",
+        ],
+    },
+    {
+        title: "GameHWND — Frontend/API Portfolio Project",
+        href: "/projects/gamehwnd",
+        pdfUrl: `${portfolioBaseUrl}/projects/gamehwnd`,
+        subtitle: "React, TypeScript, React Query, Chakra UI, RAWG API",
+        bullets: [
+            "Built an API-driven game discovery interface with filtering, detail views, and responsive React UI patterns.",
+        ],
+    },
+];
+
 export const resumeSections: ResumeSectionData[] = [
     {
         title: "Summary",
@@ -580,7 +646,8 @@ export const resumeSections: ResumeSectionData[] = [
             "**Databases/Queues:** MongoDB, Mongoose, Redis, BullMQ, RabbitMQ, SQL",
             "**Integrations:** payments, identity verification, webhooks, Firebase Auth, RevenueCat, SMTP email, PDF generation",
             "**DevOps:** Docker Compose, Linux, deployment automation, Cloudflare Tunnel, CI/CD",
-            "**Testing/Workflow:** Jest, MSW, React Native Testing Library, spec-driven development, AI-assisted development with Cline",
+            "**Testing/Workflow:** Jest, MSW, React Native Testing Library, OpenAPI validation, spec-driven development, AI-assisted development",
+            "**Developer Tools:** custom MCP server, repository-aware RAG, codebase auditing workflows",
         ],
     },
     {
@@ -595,36 +662,14 @@ export const resumeSections: ResumeSectionData[] = [
                     "Designed **role-based admin workflows** for member updates, financial requests, polling, and operational support tasks.",
                     "Implemented webhook and worker flows for payments, identity events, email delivery, and background processing.",
                     "Built **Docker Compose deployment** automation and Linux-based release workflows to support repeatable production updates.",
+                    "Built a custom MCP server for repository-aware RAG, codebase auditing, and repeatable engineering workflows.",
                 ],
             },
         ],
     },
     {
         title: "Projects",
-        entries: [
-            {
-                title: "Routine Gym Journal — Independent Product Project",
-                meta: "Active Development",
-                href: "/projects/routine-gym-journal",
-                bullets: [
-                    "Built a **React Native fitness app** with workout planning, guided execution, API-backed data, authentication, local persistence, and stats dashboards.",
-                    "Designed shared **TypeScript** and **OpenAPI-backed APIs** across mobile and backend services using Zod-based validation.",
-                    "Developed reusable mobile API clients and backend services for workouts, programs, exercises, sharing, settings, and progress tracking.",
-                    "Built local persistence with Expo SQLite and Drizzle to support draft state and in-progress workout sessions.",
-                    "Used Jest and MSW to test mobile clients, hooks, UI flows, and persistence behavior.",
-                ],
-            },
-            {
-                title: "FitnessBytes — Full-Stack Social Fitness Platform",
-                href: "/projects/fitnessbytes",
-                subtitle:
-                    "React, Node.js, Express, MongoDB, Passport.js, Socket.IO",
-                bullets: [
-                    "Built a full-stack social fitness platform with authentication, profiles, content interactions, responsive UI, and real-time messaging.",
-                    "Implemented backend APIs and real-time features with Node.js, Express, MongoDB, Passport.js, and Socket.IO.",
-                ],
-            },
-        ],
+        entries: resumeProjectEntries,
     },
     {
         title: "Education",
