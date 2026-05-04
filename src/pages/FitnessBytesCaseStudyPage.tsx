@@ -4,16 +4,18 @@ import SectionHeading from "../components/SectionHeading";
 import TechTag from "../components/TechTag";
 import { projects } from "../data/site";
 
-const project = projects.find((item) => item.slug === "routine-gym-journal");
+const project = projects.find((item) => item.slug === "fitnessbytes");
 
 if (!project) {
-    throw new Error("Routine Gym Journal project data is missing.");
+    throw new Error("FitnessBytes project data is missing.");
 }
 
-const RoutineGymJournalCaseStudyPage = () => (
-    <div className="shell section case-study">
+const FitnessBytesCaseStudyPage = () => (
+    <div className="shell section case-study case-study--secondary">
         <header className="case-study__hero">
-            <span className="status-badge">{project.status}</span>
+            <span className="status-badge status-badge--muted">
+                {project.status}
+            </span>
             <h1>{project.title}</h1>
             <p>
                 <RichText text={project.subtitle ?? ""} />
@@ -21,7 +23,7 @@ const RoutineGymJournalCaseStudyPage = () => (
         </header>
 
         <section className="section-block">
-            <SectionHeading title="Impact and significance" />
+            <SectionHeading title="Why it matters" />
             <div className="impact-grid">
                 {project.impact?.map((item) => (
                     <div className="impact-card" key={item.title}>
@@ -52,9 +54,7 @@ const RoutineGymJournalCaseStudyPage = () => (
             <div className="content-card">
                 <ul className="bullet-list">
                     {project.engineering?.map((item) => (
-                        <li key={item}>
-                            <RichText text={item} />
-                        </li>
+                        <li key={item}>{item}</li>
                     ))}
                 </ul>
             </div>
@@ -70,21 +70,7 @@ const RoutineGymJournalCaseStudyPage = () => (
         </section>
 
         <section className="section-block">
-            <SectionHeading title="What I owned" />
-            <div className="content-card">
-                <ul className="bullet-list">
-                    {project.ownership?.map((item) => (
-                        <li key={item}>{item}</li>
-                    ))}
-                </ul>
-            </div>
-        </section>
-
-        <section className="section-block">
-            <SectionHeading
-                title="Demos and walkthroughs"
-                description="Focused demo targets that explain why each flow matters."
-            />
+            <SectionHeading title="Demo placeholders" />
             <div className="demo-grid">
                 {project.demos?.map((demo) => (
                     <DemoPlaceholder
@@ -97,18 +83,7 @@ const RoutineGymJournalCaseStudyPage = () => (
         </section>
 
         <section className="section-block">
-            <SectionHeading title="Engineering value" />
-            <div className="content-card">
-                <ul className="bullet-list">
-                    {project.systemOverview?.map((item) => (
-                        <li key={item}>{item}</li>
-                    ))}
-                </ul>
-            </div>
-        </section>
-
-        <section className="section-block">
-            <SectionHeading title="Accuracy note" />
+            <SectionHeading title="Status note" />
             <div className="content-card">
                 <p>
                     <RichText text={project.note ?? ""} />
@@ -118,4 +93,4 @@ const RoutineGymJournalCaseStudyPage = () => (
     </div>
 );
 
-export default RoutineGymJournalCaseStudyPage;
+export default FitnessBytesCaseStudyPage;

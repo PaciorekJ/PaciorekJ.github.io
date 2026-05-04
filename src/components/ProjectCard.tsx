@@ -1,7 +1,9 @@
+import clsx from "clsx";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Project } from "../types/portfolio";
 import ButtonLink from "./ButtonLink";
+import RichText from "./RichText";
 import TechTag from "./TechTag";
 
 type ProjectCardProps = {
@@ -13,14 +15,21 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
     return (
         <motion.article
-            className="project-card"
+            className={clsx("project-card", {
+                "project-card--secondary": !project.featured,
+            })}
             whileHover={
                 reduceMotion
                     ? undefined
                     : { y: -4, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.12)" }
             }>
             <div className="project-card__header">
-                <span className="status-badge">{project.status}</span>
+                <span
+                    className={clsx("status-badge", {
+                        "status-badge--muted": !project.featured,
+                    })}>
+                    {project.status}
+                </span>
                 <h3>{project.title}</h3>
                 <p>{project.shortDescription}</p>
             </div>
@@ -29,12 +38,22 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                     <TechTag key={tech} label={tech} />
                 ))}
             </div>
-            <ButtonLink
-                to={project.href}
-                variant="ghost"
-                className="project-card__cta">
-                View case study <ArrowRight size={16} aria-hidden="true" />
-            </ButtonLink>
+            {project.href ? (
+                <ButtonLink
+                    to={project.external ? undefined : project.href}
+                    href={project.external ? project.href : undefined}
+                    target={project.external ? "_blank" : undefined}
+                    rel={project.external ? "noreferrer" : undefined}
+                    variant="ghost"
+                    className="project-card__cta">
+                    <RichText text={project.ctaLabel ?? "View project"} />{" "}
+                    <ArrowRight size={16} aria-hidden="true" />
+                </ButtonLink>
+            ) : (
+                <div className="project-card__summary">
+                    <RichText text={project.ctaLabel ?? "Project summary"} />
+                </div>
+            )}
         </motion.article>
     );
 };

@@ -5,6 +5,8 @@ import Layout from "./components/Layout";
 import "./index.css";
 import ContactPage from "./pages/ContactPage";
 import ExperiencePage from "./pages/ExperiencePage";
+import FitnessBytesCaseStudyPage from "./pages/FitnessBytesCaseStudyPage";
+import GameHwndCaseStudyPage from "./pages/GameHwndCaseStudyPage";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ResumePage from "./pages/ResumePage";
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
             {
                 path: "projects/routine-gym-journal",
                 element: <RoutineGymJournalCaseStudyPage />,
+            },
+            {
+                path: "projects/fitnessbytes",
+                element: <FitnessBytesCaseStudyPage />,
+            },
+            {
+                path: "projects/gamehwnd",
+                element: <GameHwndCaseStudyPage />,
             },
             { path: "experience", element: <ExperiencePage /> },
             { path: "contact", element: <ContactPage /> },

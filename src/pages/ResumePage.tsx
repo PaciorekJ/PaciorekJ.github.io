@@ -1,46 +1,63 @@
-import { Printer } from "lucide-react";
+import { Download } from "lucide-react";
+import { useRef } from "react";
+import generatePDF, { Margin, Resolution } from "react-to-pdf";
 import ButtonLink from "../components/ButtonLink";
-import ResumeSection from "../components/ResumeSection";
-import { resumeContactLinks, resumeSections } from "../data/site";
+import ResumeDocument from "../components/ResumeDocument";
+import ResumePdfExport from "../components/ResumePdfExport";
+import SectionHeading from "../components/SectionHeading";
 
-const ResumePage = () => (
-    <section className="shell section resume-page">
-        <div className="resume-page__toolbar no-print">
-            <div>
-                <p className="eyebrow">Resume</p>
-                <h1>Jason Paciorek</h1>
-                <p>Full-Stack TypeScript Developer</p>
-            </div>
-            <ButtonLink variant="primary" onClick={() => window.print()}>
-                <Printer size={18} aria-hidden="true" /> Print / Save as PDF
-            </ButtonLink>
-        </div>
+const ResumePage = () => {
+    const pdfTargetRef = useRef<HTMLDivElement>(null);
 
-        <article className="resume-document">
-            <header className="resume-document__header">
-                <div>
-                    <h1>Jason Paciorek</h1>
-                    <p>Full-Stack TypeScript Developer</p>
+    const handleDownloadPdf = () => {
+        if (!pdfTargetRef.current) {
+            return;
+        }
+
+        generatePDF(pdfTargetRef, {
+            filename: "Jason-Paciorek-Resume.pdf",
+            method: "save",
+            resolution: Resolution.HIGH,
+            page: {
+                margin: Margin.SMALL,
+                format: "letter",
+                orientation: "portrait",
+            },
+            overrides: {
+                pdf: {
+                    compress: true,
+                },
+                canvas: {
+                    useCORS: true,
+                },
+            },
+        });
+    };
+
+    return (
+        <section className="shell section resume-page">
+            <div className="resume-page__toolbar no-print">
+                <SectionHeading
+                    eyebrow="Resume"
+                    title="Resume"
+                    description="A focused one-page view of my full-stack, mobile, API, integration, and deployment experience."
+                />
+                <div className="resume-page__actions">
+                    <ButtonLink variant="primary" onClick={handleDownloadPdf}>
+                        <Download size={18} aria-hidden="true" /> Download PDF
+                    </ButtonLink>
                 </div>
-                <ul className="resume-contact-list">
-                    {resumeContactLinks.map((link) => (
-                        <li key={`${link.label}-${link.value}`}>
-                            <strong>{link.label}:</strong>{" "}
-                            {link.href ? (
-                                <a href={link.href}>{link.value}</a>
-                            ) : (
-                                link.value
-                            )}
-                        </li>
-                    ))}
-                </ul>
-            </header>
+            </div>
 
-            {resumeSections.map((section) => (
-                <ResumeSection key={section.title} section={section} />
-            ))}
-        </article>
-    </section>
-);
+            <ResumeDocument />
+
+            <div className="resume-pdf-export" aria-hidden="true">
+                <div ref={pdfTargetRef}>
+                    <ResumePdfExport />
+                </div>
+            </div>
+        </section>
+    );
+};
 
 export default ResumePage;

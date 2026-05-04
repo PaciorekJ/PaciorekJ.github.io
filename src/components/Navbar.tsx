@@ -1,10 +1,30 @@
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Menu, Moon, Sun, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import { navItems } from "../data/site";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [theme, setTheme] = useState<"light" | "dark">(() => {
+        if (typeof document === "undefined") {
+            return "light";
+        }
+
+        return document.documentElement.dataset.theme === "dark"
+            ? "dark"
+            : "light";
+    });
+
+    useEffect(() => {
+        document.documentElement.dataset.theme = theme;
+        localStorage.setItem("theme", theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme((currentTheme) =>
+            currentTheme === "light" ? "dark" : "light",
+        );
+    };
 
     return (
         <header className="site-header no-print">
@@ -14,18 +34,8 @@ const Navbar = () => {
                     to="/"
                     onClick={() => setIsOpen(false)}>
                     <span className="brand__name">Jason Paciorek</span>
-                    <span className="brand__role">
-                        Full-Stack TypeScript Developer
-                    </span>
+                    <span className="brand__role">Full-Stack Developer</span>
                 </NavLink>
-                <button
-                    className="nav-toggle"
-                    type="button"
-                    onClick={() => setIsOpen((open) => !open)}
-                    aria-expanded={isOpen}
-                    aria-label="Toggle navigation">
-                    {isOpen ? <X size={20} /> : <Menu size={20} />}
-                </button>
                 <nav
                     className={`nav ${isOpen ? "nav--open" : ""}`}
                     aria-label="Primary">
@@ -40,7 +50,43 @@ const Navbar = () => {
                             {item.label}
                         </NavLink>
                     ))}
+                    <button
+                        className="theme-toggle theme-toggle--mobile"
+                        type="button"
+                        onClick={toggleTheme}
+                        aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}>
+                        {theme === "light" ? (
+                            <>
+                                <Moon size={18} aria-hidden="true" /> Dark mode
+                            </>
+                        ) : (
+                            <>
+                                <Sun size={18} aria-hidden="true" /> Light mode
+                            </>
+                        )}
+                    </button>
                 </nav>
+                <div className="site-header__controls">
+                    <button
+                        className="theme-toggle"
+                        type="button"
+                        onClick={toggleTheme}
+                        aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}>
+                        {theme === "light" ? (
+                            <Moon size={18} aria-hidden="true" />
+                        ) : (
+                            <Sun size={18} aria-hidden="true" />
+                        )}
+                    </button>
+                    <button
+                        className="nav-toggle"
+                        type="button"
+                        onClick={() => setIsOpen((open) => !open)}
+                        aria-expanded={isOpen}
+                        aria-label="Toggle navigation">
+                        {isOpen ? <X size={20} /> : <Menu size={20} />}
+                    </button>
+                </div>
             </div>
         </header>
     );

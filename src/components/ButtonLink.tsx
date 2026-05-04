@@ -11,6 +11,7 @@ type ButtonLinkProps = {
     onClick?: () => void;
     target?: string;
     rel?: string;
+    type?: "button" | "submit" | "reset";
 };
 
 const ButtonLink = ({
@@ -22,6 +23,7 @@ const ButtonLink = ({
     onClick,
     target,
     rel,
+    type = "button",
 }: ButtonLinkProps) => {
     const classes = clsx("button-link", `button-link--${variant}`, className);
 
@@ -30,6 +32,14 @@ const ButtonLink = ({
             <Link className={classes} to={to} onClick={onClick}>
                 {children}
             </Link>
+        );
+    }
+
+    if (!href) {
+        return (
+            <button className={classes} type={type} onClick={onClick}>
+                {children}
+            </button>
         );
     }
 

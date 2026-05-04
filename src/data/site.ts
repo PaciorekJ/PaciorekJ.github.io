@@ -1,6 +1,5 @@
 import {
     ContactLink,
-    DiagramNode,
     NavItem,
     Project,
     ResumeSectionData,
@@ -34,27 +33,93 @@ export const contactLinks: ContactLink[] = [
         value: "linkedin.com/in/jasonpaciorek",
         href: "https://www.linkedin.com/in/jasonpaciorek",
     },
-    { label: "Location", value: "Apple Valley, MN" },
 ];
 
 export const resumeContactLinks: ContactLink[] = [
-    ...contactLinks,
-    { label: "Phone", value: "(952) 297-2727", href: "tel:9522972727" },
+    {
+        label: "Email",
+        value: "paciorekjason@gmail.com",
+        href: "mailto:paciorekjason@gmail.com",
+    },
+    {
+        label: "GitHub",
+        value: "github.com/PaciorekJ",
+        href: "https://github.com/PaciorekJ",
+    },
+    {
+        label: "LinkedIn",
+        value: "linkedin.com/in/jasonpaciorek",
+        href: "https://www.linkedin.com/in/jasonpaciorek",
+    },
+];
+
+export const resumePdfContactLinks: ContactLink[] = [
+    {
+        label: "Email",
+        value: "paciorekjason@gmail.com",
+        href: "mailto:paciorekjason@gmail.com",
+    },
+    {
+        label: "GitHub",
+        value: "https://github.com/PaciorekJ",
+        href: "https://github.com/PaciorekJ",
+    },
+    {
+        label: "LinkedIn",
+        value: "https://www.linkedin.com/in/jasonpaciorek",
+        href: "https://www.linkedin.com/in/jasonpaciorek",
+    },
 ];
 
 export const heroSummary =
-    "I build web and mobile applications with React, React Native, Node.js, MongoDB, Docker, Stripe, and production-focused backend systems.";
+    "I build **web and mobile applications** with **TypeScript**, **React**, **React Native**, **Node.js**, **MongoDB**, **Docker**, and **REST APIs**.";
+
+export const heroSupportLine =
+    "Recent work includes onboarding flows, internal tools, **authentication and authorization**, third-party integrations, and deployment automation for client-facing software.";
+
+export const homeProofChips = [
+    {
+        title: "**Full-stack delivery**",
+        description: "React, Node.js, MongoDB, REST APIs",
+    },
+    {
+        title: "**Business workflows**",
+        description: "authentication, payments, admin workflows, integrations",
+    },
+    {
+        title: "**Deployment ownership**",
+        description: "Docker Compose, Linux services, release automation",
+    },
+    {
+        title: "**Mobile architecture**",
+        description: "React Native, Expo, local persistence, API clients",
+    },
+];
 
 export const aboutSummary =
-    "I am a full-stack developer focused on TypeScript, production-ready workflows, and practical software architecture. My recent work includes a client-facing white-label SaaS platform with secure onboarding, Stripe payments, identity verification, admin workflows, background workers, and Docker-based deployment automation. I am also building Routine Gym Journal, an active React Native fitness app with OpenAPI-backed APIs, Firebase Auth, RevenueCat, local persistence, and workout tracking features.";
+    "I build software for real workflows: onboarding, internal tools, mobile experiences, APIs, integrations, and deployment operations. My recent client work supports a membership organization with **12,000+ members**, while my active mobile product work focuses on workout planning, guided training, local persistence, and API-backed progress tracking.";
 
 export const technicalStrengths = [
-    "Full-stack TypeScript",
-    "Payment and webhook workflows",
-    "API and backend architecture",
-    "Docker-based deployment",
-    "Mobile product architecture",
-    "Spec-driven / AI-assisted workflow",
+    {
+        title: "**Client-facing SaaS delivery**",
+        description:
+            "Onboarding, admin workflows, payments, integrations, and maintainable product delivery for real users.",
+    },
+    {
+        title: "**Web and mobile product work**",
+        description:
+            "React, React Native, shared TypeScript contracts, and feature flows that work across app and API layers.",
+    },
+    {
+        title: "**Backend and API design**",
+        description:
+            "Node.js services, REST APIs, auth-aware integrations, validation, and maintainable data workflows.",
+    },
+    {
+        title: "**Deployment and operations**",
+        description:
+            "Docker Compose, Linux automation, release workflows, and production-facing deployment support.",
+    },
 ];
 
 export const projects: Project[] = [
@@ -63,64 +128,89 @@ export const projects: Project[] = [
         title: "White-Label Membership Management Platform",
         status: "Client SaaS Project",
         description:
-            "Client-facing SaaS platform for secure onboarding, payments, identity verification, polling, admin workflows, document generation, background workers, and Docker-based deployment operations.",
+            "Full-stack membership platform with onboarding, payments, admin operations, documents, integrations, and deployment automation for a large organization.",
         shortDescription:
-            "Client-facing SaaS platform for secure onboarding, Stripe payments, identity verification, admin workflows, and Docker-based deployment.",
+            "Client-facing SaaS platform for onboarding, admin workflows, payments, identity verification, documents, and deployment automation.",
         tech: [
             "TypeScript",
-            "React Router",
             "React",
+            "React Router",
             "Node.js",
             "MongoDB",
-            "Mongoose",
             "Redis",
             "BullMQ",
             "Stripe Checkout",
             "Stripe Identity",
             "Docker Compose",
-            "OpenBao/Vault",
-            "Cloudflare Tunnel",
             "Zod",
             "Tailwind CSS",
-            "Radix UI",
-            "PDF Generation",
-            "SMTP",
         ],
         href: "/projects/white-label-membership-platform",
+        ctaLabel: "View case study",
+        caseStudy: true,
         featured: true,
         subtitle:
-            "Client-facing SaaS platform for secure onboarding, payments, identity verification, polling, admin workflows, document generation, background workers, and Docker-based deployment operations.",
-        highlights: [
-            "Secure onboarding, payments, and identity verification",
-            "Role-based admin workflows and member operations",
-            "Background jobs, document generation, and Docker deployment",
+            "Full-stack membership platform for onboarding, admin workflows, payments, documents, and deployment automation.",
+        impact: [
+            {
+                title: "**12,000+ member organization**",
+                description:
+                    "Built for real operational membership workflows without naming the client.",
+            },
+            {
+                title: "**Secure onboarding**",
+                description:
+                    "Email verification, payment, identity verification, signatures, and generated documents in one controlled flow.",
+            },
+            {
+                title: "**Operational tooling**",
+                description:
+                    "Admin workflows, background jobs, and deployment automation supporting day-to-day operations.",
+            },
         ],
-        architecture: [
-            "React Router full-stack workflows for registration, admin, and member operations",
-            "Node.js service-layer architecture with MongoDB/Mongoose persistence",
-            "Zod validation and shared workspace packages",
-            "Redis/BullMQ queues for background jobs",
-            "Dedicated mailer, poll-audit, Neo4j, MSSQL sync, and maintainer services",
-            "Docker Compose infrastructure with health checks and hardened containers",
-            "OpenBao/Vault AppRole/TLS integration",
-            "Environment reference documentation and production configuration guidance",
+        highlights: [
+            "Multi-step registration and onboarding flow",
+            "Payments, identity verification, and document workflows integrated into one application",
+            "**role-based admin workflows** for member updates and financial requests",
+            "Polling and voting workflows with receipts, results, exports, and audit support",
+            "Transactional email and generated PDF documents",
+            "**Docker Compose deployment** and Linux-based release automation",
+        ],
+        engineering: [
+            "Integrated payments, identity verification, registration, documents, and email into one onboarding workflow.",
+            "Designed webhook and worker flows for payment, verification, and communication events.",
+            "Built admin-only workflows for sensitive member operations and internal support tasks.",
+            "Added background workers for email, polling, and operational tasks.",
+            "Improved deployment reliability with Docker Compose automation and repeatable release scripts.",
         ],
         ownership: [
-            "Full-stack feature implementation across UI, backend, and operations",
-            "Registration, payment, and identity workflow architecture",
-            "Role-based admin and internal workflow development",
-            "Background worker and queue integration",
-            "Stripe integration and webhook processing",
-            "Deployment automation and infrastructure scripting",
-            "Production-readiness documentation",
-            "Spec-driven planning and validation with Cline as an engineering assistant",
+            "Full-stack feature implementation across UI, backend, and operations.",
+            "Registration, payment, and identity workflow architecture.",
+            "Admin workflow development for sensitive membership operations.",
+            "Queue and worker integration for operational processes.",
+            "Deployment automation and infrastructure scripting.",
+        ],
+        systemOverview: [
+            "Connected registration, payments, identity verification, digital signatures, generated PDFs, and email into a controlled onboarding workflow.",
+            "Built admin workflows and background workers for sensitive operational tasks.",
+            "Supported reliable releases with Docker Compose services, automation scripts, and production-facing workflows.",
         ],
         demos: [
-            "Registration Happy Path",
-            "Payment / Identity Retry Handling",
-            "Shared-Device Close Session",
-            "Poll / Voting Flow",
-            "Admin Update Request Flow",
+            {
+                label: "Registration and onboarding walkthrough",
+                description:
+                    "Shows how verification, payment, signatures, and generated documents fit into one user-facing flow.",
+            },
+            {
+                label: "Payment and identity workflow recovery",
+                description:
+                    "Demonstrates how interrupted onboarding steps are recovered without losing workflow control.",
+            },
+            {
+                label: "Admin workflows and polling overview",
+                description:
+                    "Highlights the internal tooling used to support sensitive member updates, requests, and operational voting workflows.",
+            },
         ],
     },
     {
@@ -128,148 +218,314 @@ export const projects: Project[] = [
         title: "Routine Gym Journal",
         status: "Independent Product Project — Active Development",
         description:
-            "Independent full-stack mobile workout journaling platform for planning workouts, logging training sessions, reviewing performance, and managing fitness progress.",
+            "Full-stack mobile workout journaling platform for workout planning, guided training, progress tracking, API-backed data, local persistence, authentication, and subscription-ready architecture.",
         shortDescription:
-            "Active React Native fitness app for workout journaling, API-backed features, local persistence, authentication, and subscription-ready mobile flows.",
+            "Active React Native fitness product with workout planning, guided execution, API-backed features, local persistence, and authentication.",
         tech: [
             "TypeScript",
             "React Native",
             "Expo",
             "Expo Router",
-            "OpenAPI",
-            "Firebase Auth",
-            "React Query",
-            "Zustand",
             "Node.js",
-            "React Router",
             "MongoDB",
-            "Mongoose",
+            "OpenAPI",
             "Zod",
+            "Firebase Auth",
             "RevenueCat",
             "Expo SQLite",
-            "Drizzle ORM",
-            "Redis",
-            "RabbitMQ",
-            "Docker Compose",
             "Jest",
         ],
         href: "/projects/routine-gym-journal",
+        ctaLabel: "View case study",
+        caseStudy: true,
         featured: true,
         subtitle:
-            "Independent full-stack mobile workout journaling platform for planning workouts, logging training sessions, reviewing performance, and managing fitness progress.",
-        highlights: [
-            "Workout planning, journaling, and guided execution",
-            "Firebase Auth, RevenueCat, and OpenAPI-backed APIs",
-            "Local persistence, testing, and mobile architecture",
+            "Full-stack mobile workout journaling platform for workout planning, guided training, progress tracking, API-backed data, local persistence, authentication, and subscription-ready architecture.",
+        impact: [
+            {
+                title: "**Full-stack mobile product**",
+                description:
+                    "React Native app, backend API, and shared contracts developed as one integrated product stack.",
+            },
+            {
+                title: "**Fitness-domain modeling**",
+                description:
+                    "Covers workouts, programs, sets, sessions, stats, and sharing rather than a narrow demo feature set.",
+            },
+            {
+                title: "**Mobile architecture**",
+                description:
+                    "Includes authentication, local persistence, API clients, and testing patterns.",
+            },
         ],
-        architecture: [
-            "Monorepo with mobile app, backend API, translation worker, and shared contract package",
-            "OpenAPI-backed contracts with shared TypeScript/Zod validation",
-            "Reliable mobile API layer for authentication, retries, offline-aware requests, rate-limit handling, and consistent error reporting",
-            "Node.js backend services over MongoDB/Mongoose for workout, stats, sharing, and user settings APIs",
-            "Expo SQLite/Drizzle local persistence for drafts, workout execution state, and user-local data",
-            "Docker Compose backend stack with MongoDB, Redis, RabbitMQ, translation worker, LibreTranslate, Cloudflare tunnel, and health checks",
+        highlights: [
+            "Workout library, exercise picker, workout editor, and guided execution flows",
+            "Backend APIs for workouts, programs, exercises, daily data, stats, sharing, and user settings",
+            "Authentication, subscription-ready flows, and shared user settings",
+            "Local persistence for drafts and in-progress workout sessions using Expo SQLite and Drizzle",
+            "Dashboard and statistics surfaces backed by API data",
+            "Jest and MSW testing across mobile clients, hooks, UI, and local persistence layers",
+        ],
+        engineering: [
+            "Designed shared **TypeScript**, Zod, and **OpenAPI-backed APIs** across mobile and backend layers.",
+            "Built reusable React Native API clients and feature hooks.",
+            "Modeled workout templates separately from performed workout sessions.",
+            "Added local persistence for draft and active workout state.",
+            "Integrated authentication, subscription support, telemetry consent, and API-backed progress tracking.",
         ],
         ownership: [
-            "Designed OpenAPI-backed contracts and mobile/backend integration patterns",
-            "Built backend APIs for workouts, programs, exercises, stats, sharing, and user settings",
-            "Developed React Native flows for dashboard, workout editing, guided execution, stats, auth, paywall, and settings",
-            "Implemented local persistence with Expo SQLite and Drizzle ORM",
-            "Established authentication, subscription readiness, telemetry consent, and testing patterns",
+            "Product architecture across mobile app, backend API, and shared contract layer.",
+            "Backend APIs for workouts, programs, exercises, stats, sharing, and settings.",
+            "React Native flows for dashboard, editing, execution, stats, auth, paywall, and settings.",
+            "Local persistence with Expo SQLite and Drizzle ORM.",
+            "Testing patterns for clients, hooks, UI, and persistence.",
+        ],
+        systemOverview: [
+            "Built a full-stack mobile product with React Native, backend APIs, authentication, subscriptions, local persistence, and statistics.",
+            "Designed workout data around real training workflows: templates, sessions, performed sets, stats, and sharing.",
+            "Used OpenAPI and shared validation to keep mobile and backend behavior aligned as the product grows.",
         ],
         demos: [
-            "Workout Library + Detail",
-            "Workout Editor + Exercise Picker",
-            "Guided Workout Execution",
-            "Dashboard / Stats Overview",
-            "API / Architecture Walkthrough",
+            {
+                label: "Workout editor and exercise picker",
+                description:
+                    "Shows how workout planning and exercise selection are structured for repeatable training flows.",
+            },
+            {
+                label: "Guided workout execution",
+                description:
+                    "Demonstrates the mobile session flow for logging performed work, active state, and progress tracking.",
+            },
+            {
+                label: "Dashboard and stats overview",
+                description:
+                    "Highlights how API-backed metrics and recent activity surfaces support ongoing training review.",
+            },
         ],
-        currentStatus:
-            "Active development. Substantial mobile, backend, API-contract, local-persistence, auth, subscription-readiness, sharing, stats, and testing work exists. Public app-store launch, real user traction, and revenue are not claimed.",
+        note: "Status: Active development. The project is not presented as launched, revenue-generating, or fully offline-first. Local persistence uses Expo SQLite + Drizzle.",
     },
     {
         slug: "fitnessbytes",
         title: "FitnessBytes",
-        status: "Completed Portfolio Project",
+        status: "Completed Portfolio Project / On Hiatus",
         description:
-            "Full-stack social fitness platform with authentication, real-time communication, and responsive UI.",
+            "Full-stack social fitness platform with authentication, user profiles, posts, replies, real-time messaging, notifications, and responsive UI.",
         shortDescription:
-            "Portfolio project focused on authentication, session management, responsive screens, and real-time interactions.",
+            "Earlier full-stack portfolio project showing authentication, social features, real-time messaging, and responsive React UI.",
         tech: [
             "React",
+            "TypeScript",
             "Node.js",
             "Express",
             "MongoDB",
             "Passport.js",
             "Socket.IO",
+            "Material UI",
+            "React Query",
+            "React Router",
+            "Zustand",
         ],
-        href: "/projects",
+        href: "/projects/fitnessbytes",
+        ctaLabel: "View case study",
+        caseStudy: true,
+        subtitle:
+            "Full-stack social fitness platform with authentication, user profiles, posts, replies, real-time messaging, notifications, and responsive UI.",
+        impact: [
+            {
+                title: "**Full-stack social platform**",
+                description:
+                    "Shows frontend, backend, authentication, database, and real-time features working together in one product.",
+            },
+            {
+                title: "**Real-time communication**",
+                description:
+                    "Includes Socket.IO messaging and notification-related interaction flows beyond static CRUD screens.",
+            },
+            {
+                title: "**Community features**",
+                description:
+                    "Models profiles, posts, replies, likes, friend requests, settings, and user-to-user interaction patterns.",
+            },
+        ],
+        highlights: [
+            "User authentication and session management with Passport.js",
+            "User profiles, friend requests, search, and account settings",
+            "Post creation, updates, likes, replies, and nested replies",
+            "Real-time messaging and notification preferences with Socket.IO",
+            "Responsive React UI with Material UI, React Query, and Zustand",
+            "Node.js/Express backend with MongoDB persistence",
+        ],
+        engineering: [
+            "Built a complete MERN-style application with frontend, backend, database, and auth.",
+            "Added real-time user interactions through Socket.IO.",
+            "Modeled social features such as posts, replies, profiles, friend requests, and messaging.",
+            "Used React Query and Zustand for client-side data and state workflows.",
+        ],
+        demos: [
+            {
+                label: "Authentication + Profile Setup",
+                description:
+                    "Shows account creation, login, and how users move into profile and community features.",
+            },
+            {
+                label: "Posts, Replies, and Likes",
+                description:
+                    "Demonstrates the core content interaction loop that makes the platform feel social rather than static.",
+            },
+            {
+                label: "Real-Time Messaging",
+                description:
+                    "Highlights live conversations and the real-time behavior that extends the project beyond standard CRUD flows.",
+            },
+        ],
+        note: "Status: Completed portfolio project currently on hiatus. It remains useful as evidence of full-stack MERN development, authentication, real-time messaging, and social application modeling.",
     },
     {
         slug: "gamehwnd",
         title: "GameHWND",
-        status: "Completed Portfolio Project",
+        status: "Completed Portfolio Project / On Hiatus",
         description:
-            "Game discovery app exploring React Query, Zustand, TypeScript, and polished responsive UI patterns.",
+            "Game discovery platform built with React, TypeScript, React Query, and the RAWG API, focused on filtering, browsing, and reviewing game details.",
         shortDescription:
-            "Optional showcase project highlighting frontend state management and responsive interface work.",
-        tech: ["TypeScript", "React", "React Query", "Zustand"],
-        href: "/projects",
+            "Earlier frontend/API portfolio project focused on external API integration, filtering UX, and responsive React patterns.",
+        tech: [
+            "TypeScript",
+            "React",
+            "Chakra UI",
+            "React Query",
+            "React Router",
+            "RAWG API",
+            "Vercel",
+        ],
+        href: "/projects/gamehwnd",
+        ctaLabel: "View case study",
+        caseStudy: true,
+        subtitle:
+            "Game discovery platform built with React, TypeScript, React Query, and the RAWG API, focused on filtering, browsing, and reviewing game details.",
+        impact: [
+            {
+                title: "**API-driven discovery UI**",
+                description:
+                    "Shows how external game data can be turned into a useful browsing and filtering experience.",
+            },
+            {
+                title: "**Large external data source**",
+                description:
+                    "Supports filtering across **500,000+ games** using genres, platforms, dates, and review-related metadata.",
+            },
+            {
+                title: "**Frontend state and UX**",
+                description:
+                    "Highlights React Query data fetching, routing, filtering, and responsive UI composition.",
+            },
+        ],
+        highlights: [
+            "Game discovery interface using the RAWG API",
+            "Filters for genre, platform, release date, Metacritic score, and other game metadata",
+            "Game cards and detail views with descriptions, screenshots, purchase information, and trailers when available",
+            "Responsive React UI using Chakra UI",
+            "Data-fetching workflows with React Query",
+            "Routing and deployment with React Router and Vercel",
+        ],
+        engineering: [
+            "Built an external API-driven frontend with filtering and detail views.",
+            "Used React Query for remote data fetching and cache-aware UI behavior.",
+            "Designed responsive game browsing flows with React and Chakra UI.",
+            "Deployed a TypeScript React app through Vercel.",
+        ],
+        demos: [
+            {
+                label: "Game Search and Filtering",
+                description:
+                    "Shows how users narrow large result sets into something useful with filtering controls and browseable lists.",
+            },
+            {
+                label: "Game Detail View",
+                description:
+                    "Highlights how API data is turned into a richer detail experience with screenshots, descriptions, and related metadata.",
+            },
+            {
+                label: "RAWG API Data Flow",
+                description:
+                    "Demonstrates the remote data dependency and the UI patterns used to keep browsing responsive.",
+            },
+        ],
+        note: "Status: Completed portfolio project currently on hiatus. It remains useful as evidence of TypeScript React development, external API integration, filtering UX, React Query, and responsive frontend work.",
     },
 ];
 
-export const projectPreview = projects.filter((project) => project.featured);
+export const featuredProjects = projects.filter((project) => project.featured);
+export const earlierProjects = projects.filter((project) => !project.featured);
 
 export const skillCategories: SkillCategory[] = [
     {
-        title: "Frontend",
+        title: "Core development",
         items: [
-            { name: "TypeScript", value: 9 },
+            { name: "TypeScript", value: 9.5 },
+            { name: "JavaScript", value: 9 },
             { name: "React", value: 9 },
-            { name: "React Router / Remix-style routing", value: 8.5 },
-            { name: "Tailwind CSS", value: 8.5 },
-            { name: "React Native / Expo", value: 7.5 },
-        ],
-    },
-    {
-        title: "Backend",
-        items: [
             { name: "Node.js", value: 8.5 },
             { name: "REST APIs", value: 8.5 },
-            { name: "MongoDB / Mongoose", value: 8.5 },
-            { name: "Zod Validation", value: 8.5 },
-            { name: "Stripe Webhooks", value: 8 },
-            { name: "Redis / BullMQ", value: 7.5 },
+            { name: "Git", value: 8.5 },
         ],
     },
     {
-        title: "DevOps & Infrastructure",
+        title: "Frontend and mobile",
+        items: [
+            { name: "React Router", value: 8.5 },
+            { name: "Tailwind CSS", value: 8.5 },
+            { name: "React Native / Expo", value: 7.5 },
+            { name: "Expo Router", value: 7.5 },
+            { name: "Zustand", value: 7.5 },
+            { name: "React Query", value: 7.5 },
+            { name: "Framer Motion", value: 7 },
+        ],
+    },
+    {
+        title: "Backend and data",
+        items: [
+            { name: "MongoDB / Mongoose", value: 8.5 },
+            { name: "OpenAPI", value: 8 },
+            { name: "Zod Validation", value: 8.5 },
+            { name: "Redis / BullMQ", value: 7.5 },
+            { name: "RabbitMQ", value: 7 },
+            { name: "SQL", value: 7 },
+            { name: "SQLite / Drizzle", value: 7 },
+            { name: "Neo4j", value: 6.5 },
+        ],
+    },
+    {
+        title: "Integrations",
+        items: [
+            { name: "Payments / Identity Integrations", value: 8 },
+            { name: "Webhooks", value: 8 },
+            { name: "Firebase Auth", value: 7.5 },
+            { name: "RevenueCat", value: 7 },
+            { name: "SMTP Email", value: 7 },
+            { name: "PDF Generation", value: 7 },
+        ],
+    },
+    {
+        title: "DevOps and workflow",
         items: [
             { name: "Docker Compose", value: 8 },
             { name: "Linux", value: 7.5 },
-            { name: "Health Checks / Readiness Gates", value: 7.5 },
+            { name: "Deployment Automation", value: 7.5 },
+            { name: "Release Workflow", value: 7.5 },
             { name: "Cloudflare Tunnel", value: 7 },
-            { name: "CI/CD", value: 7 },
-        ],
-    },
-    {
-        title: "Mobile & Product",
-        items: [
-            { name: "Expo Router", value: 8 },
-            { name: "Mobile UX Architecture", value: 7.5 },
-            { name: "Firebase Auth", value: 7.5 },
-            { name: "RevenueCat", value: 7 },
-            { name: "SQLite / Drizzle", value: 7 },
-        ],
-    },
-    {
-        title: "Testing & Workflow",
-        items: [
+            { name: "Jest", value: 7.5 },
+            { name: "MSW", value: 7 },
             { name: "Spec-Driven Development", value: 8.5 },
             { name: "AI-Assisted Development with Cline", value: 8.5 },
-            { name: "OpenAPI", value: 8 },
-            { name: "Jest", value: 7.5 },
-            { name: "MSW / Supertest", value: 7 },
+        ],
+    },
+    {
+        title: "Systems languages",
+        items: [
+            { name: "C", value: 6.5 },
+            { name: "C++", value: 6.5 },
+            { name: "Go", value: 6 },
+            { name: "Bash / Shell Scripting", value: 7 },
         ],
     },
 ];
@@ -279,83 +535,31 @@ export const timelineEntries: TimelineEntry[] = [
         label: "Present",
         title: "Independent Contractor / Lead Full-Stack Developer",
         description:
-            "Building and rolling out client-facing TypeScript software with full-stack ownership across product workflows, backend services, and deployment operations.",
+            "Building client-facing software across frontend, backend, integrations, and deployment workflows.",
     },
     {
         label: "Active Development",
         title: "Routine Gym Journal",
         description:
-            "Independent full-stack mobile product project spanning React Native, backend contracts, local persistence, auth, and subscription readiness.",
-    },
-    {
-        label: "Sep 2024",
-        title: "Original Pancake House ended",
-        description:
-            "Wrapped a long-running high-volume service role after balancing it alongside software development and degree completion.",
+            "Independent mobile product project spanning React Native, backend APIs, local persistence, authentication, and testing workflows.",
     },
     {
         label: "May 2024",
-        title: "Independent Contractor software work began",
+        title: "Professional client software work began",
         description:
-            "Started delivering professional client-facing full-stack development work with TypeScript, React Router, Node.js, MongoDB, Redis, and Docker Compose.",
+            "Started delivering full-stack client work with TypeScript, React, Node.js, MongoDB, Redis, and Docker Compose.",
     },
     {
         label: "Fall 2023",
         title: "Graduated with B.S. in Computer Science",
         description:
-            "Completed the University of Minnesota computer science program with a strong GPA and practical full-stack development focus.",
+            "Completed the University of Minnesota computer science program with a strong GPA and practical software engineering focus.",
     },
     {
-        label: "Dec 2016",
-        title: "Original Pancake House began",
+        label: "2016 – 2024",
+        title: "Original Pancake House",
         description:
-            "Built teamwork and communication in a fast-paced service environment while progressing toward a software engineering career.",
-    },
-];
-
-export const whiteLabelDiagram: DiagramNode[] = [
-    {
-        label: "React Router App",
-        subtitle: "Full-stack workflows and admin screens",
-    },
-    {
-        label: "MongoDB / Mongoose",
-        subtitle: "Service-layer data and persistence",
-    },
-    {
-        label: "Redis / BullMQ Workers",
-        subtitle: "Background jobs and async flows",
-    },
-    {
-        label: "Stripe Checkout + Identity",
-        subtitle: "Payments and verification",
-    },
-    { label: "Mailer + PDF Generation", subtitle: "Documents and automation" },
-    {
-        label: "Docker Compose / Vault / Cloudflare",
-        subtitle: "Operations and deployment",
-    },
-];
-
-export const rgjDiagram: DiagramNode[] = [
-    { label: "React Native App", subtitle: "Workout, stats, auth, paywall" },
-    {
-        label: "API Client / React Query",
-        subtitle: "Reliable API requests and client data flows",
-    },
-    { label: "React Router Backend", subtitle: "Service-layer API workflows" },
-    {
-        label: "Shared Contracts / OpenAPI",
-        subtitle: "Type-safe contracts and validation",
-    },
-    { label: "MongoDB", subtitle: "Core application data" },
-    {
-        label: "Firebase Auth + RevenueCat",
-        subtitle: "Auth and subscription readiness",
-    },
-    {
-        label: "SQLite / Drizzle Local State",
-        subtitle: "Drafts and execution state",
+            "Built teamwork, communication, and execution discipline in a high-volume service environment while progressing toward software engineering work.",
     },
 ];
 
@@ -363,19 +567,20 @@ export const resumeSections: ResumeSectionData[] = [
     {
         title: "Summary",
         content: [
-            "Full-stack TypeScript developer with experience building client-facing SaaS and mobile products using React, React Native, React Router, Node.js, MongoDB, Redis, Docker Compose, and Stripe. Strong background in secure onboarding, payment processing, identity verification, API design, background workers, deployment automation, and mobile architecture. Experienced using spec-driven and AI-assisted development workflows to plan, implement, test, and stabilize production software.",
+            "Full-stack developer with experience building **client-facing SaaS**, **mobile applications**, **REST APIs**, and **deployment workflows** using TypeScript, React, React Native, Node.js, MongoDB, Redis, and Docker Compose. Experience includes authentication and authorization, third-party integrations, internal tooling, backend services, testing workflows, and production-facing releases.",
         ],
     },
     {
         title: "Technical Skills",
         content: [
-            "Languages: TypeScript, JavaScript, SQL, C, C++",
-            "Frontend: React, React Router, Vite, React Native, Expo, Expo Router, React Query, Zustand, Tailwind CSS, Radix UI, Framer Motion, responsive UI",
-            "Backend: Node.js, Express, REST APIs, React Router backend routes, API design, OpenAPI, Zod, Mongoose, Stripe Webhooks, Firebase Admin",
-            "Databases & Queues: MongoDB, Redis, SQL, Neo4j, RabbitMQ, BullMQ, Expo SQLite, Drizzle",
-            "DevOps: Docker, Docker Compose, Linux, Cloudflare Tunnel, deployment automation, health checks, backup / restore workflows, MongoDB replica-set initialization, OpenBao / Vault, CI/CD, Git, Bash / shell scripting, Go",
-            "Integrations: Stripe Checkout, Stripe Identity, Firebase Auth, RevenueCat, SMTP email, PDF generation",
-            "Testing & Workflow: Jest, MSW, React Native Testing Library, OpenAPI validation, type safety, spec-driven development, AI-assisted development with Cline",
+            "**Languages:** TypeScript, JavaScript, SQL, C, C++, Bash / shell scripting, Go",
+            "**Frontend:** React, React Router, Vite, Tailwind CSS, React Query, Zustand, Framer Motion",
+            "**Mobile:** React Native, Expo, Expo Router, local persistence with SQLite / Drizzle",
+            "**Backend/API:** Node.js, Express, **REST APIs**, OpenAPI, Zod, Firebase Admin",
+            "**Databases/Queues:** MongoDB, Mongoose, Redis, BullMQ, RabbitMQ, SQL",
+            "**Integrations:** payments, identity verification, webhooks, Firebase Auth, RevenueCat, SMTP email, PDF generation",
+            "**DevOps:** Docker Compose, Linux, deployment automation, Cloudflare Tunnel, CI/CD",
+            "**Testing/Workflow:** Jest, MSW, React Native Testing Library, spec-driven development, AI-assisted development with Cline",
         ],
     },
     {
@@ -385,37 +590,38 @@ export const resumeSections: ResumeSectionData[] = [
                 title: "Independent Contractor — Lead Full-Stack Developer",
                 meta: "May 2024 – Present",
                 bullets: [
-                    "Led full-stack development of a client-facing white-label membership management platform using TypeScript, React Router, Node.js, MongoDB, Redis, Docker Compose, and Stripe.",
-                    "Built secure onboarding workflows with email verification, Stripe Checkout, Stripe Identity, digital signatures, PDF generation, and automated email delivery.",
-                    "Implemented reliable Stripe webhook processing for payment and identity verification workflows.",
-                    "Designed role-based admin workflows for member updates, financial requests, polling, form management, backup operations, and maintenance tasks.",
-                    "Hardened Docker Compose deployment workflows with MongoDB replica-set initialization, Redis, OpenBao/Vault, Cloudflare Tunnel, health checks, backup/restore, updates, and rollback automation.",
-                    "Applied spec-driven and AI-assisted development workflows with Cline to plan, audit, implement, and validate production features while preserving TypeScript safety and release constraints.",
+                    "Led full-stack development of a **client-facing SaaS** white-label membership platform using TypeScript, React, Node.js, MongoDB, Redis, Docker Compose, and Stripe.",
+                    "Built onboarding flows with email verification, payments, identity verification, digital signatures, generated PDFs, and transactional email delivery.",
+                    "Designed **role-based admin workflows** for member updates, financial requests, polling, and operational support tasks.",
+                    "Implemented webhook and worker flows for payments, identity events, email delivery, and background processing.",
+                    "Built **Docker Compose deployment** automation and Linux-based release workflows to support repeatable production updates.",
                 ],
             },
         ],
     },
     {
-        title: "Selected Projects",
+        title: "Projects",
         entries: [
             {
                 title: "Routine Gym Journal — Independent Product Project",
                 meta: "Active Development",
+                href: "/projects/routine-gym-journal",
                 bullets: [
-                    "Designed and built a full-stack workout journaling platform using TypeScript, React Native, Expo Router, Node.js, MongoDB/Mongoose, Firebase Auth, RevenueCat, and OpenAPI-backed contracts.",
-                    "Built a reliable React Native API layer with authentication, retry handling, offline-aware requests, and consistent error reporting across workout, stats, sharing, and user settings features.",
-                    "Built backend APIs for workouts, programs, exercises, daily data, set logging, sharing, user preferences, and performance statistics using TypeScript, Zod, and MongoDB/Mongoose.",
-                    "Developed mobile workout library, exercise picker, workout editor, guided execution, dashboard, stats, settings, auth, paywall, and sharing flows with React Query, Zustand, Expo SQLite, and Drizzle ORM.",
-                    "Established production-ready patterns with Firebase Auth, RevenueCat webhook handling, Docker Compose services, health checks, and Jest/MSW test coverage.",
+                    "Built a **React Native fitness app** with workout planning, guided execution, API-backed data, authentication, local persistence, and stats dashboards.",
+                    "Designed shared **TypeScript** and **OpenAPI-backed APIs** across mobile and backend services using Zod-based validation.",
+                    "Developed reusable mobile API clients and backend services for workouts, programs, exercises, sharing, settings, and progress tracking.",
+                    "Built local persistence with Expo SQLite and Drizzle to support draft state and in-progress workout sessions.",
+                    "Used Jest and MSW to test mobile clients, hooks, UI flows, and persistence behavior.",
                 ],
             },
             {
                 title: "FitnessBytes — Full-Stack Social Fitness Platform",
+                href: "/projects/fitnessbytes",
                 subtitle:
                     "React, Node.js, Express, MongoDB, Passport.js, Socket.IO",
                 bullets: [
-                    "Built a full-stack social fitness platform with user authentication, session management, real-time messaging/notifications, and responsive Material UI screens.",
-                    "Implemented backend APIs with Node.js, Express, MongoDB, Passport.js, and Socket.IO.",
+                    "Built a full-stack social fitness platform with authentication, profiles, content interactions, responsive UI, and real-time messaging.",
+                    "Implemented backend APIs and real-time features with Node.js, Express, MongoDB, Passport.js, and Socket.IO.",
                 ],
             },
         ],
