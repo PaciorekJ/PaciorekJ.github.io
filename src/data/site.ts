@@ -238,6 +238,7 @@ export const projects: Project[] = [
         slug: "routine-gym-journal",
         title: "Routine Gym Journal",
         status: "Independent Product Project — Active Development",
+        badges: ["Independent Product Project", "Active Development"],
         description:
             "Full-stack mobile workout journaling platform for workout planning, guided training, progress tracking, API-backed data, local persistence, authentication, and subscription-ready architecture.",
         shortDescription:

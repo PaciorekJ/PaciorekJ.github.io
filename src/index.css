@@ -116,6 +116,7 @@ button:focus-visible {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    overflow-y: hidden;
 }
 
 .page-main {
@@ -382,6 +383,10 @@ span {
     margin-top: clamp(0.5rem, 2vw, 1.25rem);
 }
 
+.hero__actions .button-link {
+    min-width: 0;
+}
+
 .hero__proofs {
     display: grid;
     gap: 0.9rem;
@@ -439,7 +444,7 @@ span {
 }
 
 .contact-photo-frame {
-    width: min(100%, clamp(200px, 22vw, 260px));
+    width: min(100%, clamp(220px, 22vw, 300px));
 }
 
 .contact-photo {
@@ -603,6 +608,7 @@ span {
     flex-direction: column;
     justify-content: space-between;
     gap: 1.25rem;
+    min-width: 0;
 }
 
 .project-card--secondary {
@@ -613,6 +619,16 @@ span {
 .project-card__header {
     display: grid;
     gap: 0.9rem;
+    min-width: 0;
+}
+
+.project-card__badges,
+.status-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    min-width: 0;
+    max-width: 100%;
 }
 
 .project-card__header h3,
@@ -637,6 +653,7 @@ span {
     align-items: center;
     gap: 0.35rem;
     width: fit-content;
+    max-width: 100%;
     min-height: 2rem;
     padding: 0.4rem 0.7rem;
     border-radius: 999px;
@@ -649,8 +666,9 @@ span {
     font-size: 0.85rem;
     font-weight: 700;
     border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
-    white-space: nowrap;
-    flex-shrink: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    flex-shrink: 1;
 }
 
 .status-badge--muted {
@@ -661,7 +679,6 @@ span {
     );
     color: var(--text-muted);
     border-color: color-mix(in srgb, var(--border) 90%, transparent);
-    white-space: nowrap;
 }
 
 .case-study--secondary {
@@ -802,6 +819,20 @@ span {
 .two-column {
     display: grid;
     gap: 1.25rem;
+}
+
+.contact-layout {
+    grid-template-areas:
+        "image"
+        "copy";
+}
+
+.contact-layout__copy {
+    grid-area: copy;
+}
+
+.contact-layout__image {
+    grid-area: image;
 }
 
 .demo-placeholder {
@@ -1197,12 +1228,6 @@ span {
     gap: 1rem;
 }
 
-.contact-card-photo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .content-card--accent {
     background: linear-gradient(
         180deg,
@@ -1212,10 +1237,10 @@ span {
 }
 
 .contact-card-photo-panel {
-    display: grid;
+    display: flex;
     align-content: start;
-    justify-items: center;
-    padding-block: clamp(1.5rem, 3vw, 2rem);
+    justify-content: center;
+    padding: 0;
 }
 
 .site-footer {
@@ -1326,6 +1351,7 @@ span {
     .contact-layout {
         align-items: stretch;
         grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.75fr);
+        grid-template-areas: "copy image";
     }
 
     .contact-card-primary,
@@ -1358,6 +1384,10 @@ span {
         justify-content: center;
     }
 
+    .contact-card-photo-panel {
+        justify-content: flex-start;
+    }
+
     .about-highlight-grid,
     .about-highlight-grid--compact {
         grid-template-columns: 1fr;
@@ -1369,6 +1399,19 @@ span {
 
     .contact-row {
         width: 100%;
+    }
+}
+
+@media (max-width: 322px) {
+    .hero__actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero__actions .button-link {
+        width: 100%;
+        justify-content: center;
     }
 }
 

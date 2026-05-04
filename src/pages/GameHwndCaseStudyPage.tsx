@@ -1,4 +1,5 @@
 import DemoPlaceholder from "../components/DemoPlaceholder";
+import ProjectStatusBadges from "../components/ProjectStatusBadges";
 import RichText from "../components/RichText";
 import SectionHeading from "../components/SectionHeading";
 import TechTag from "../components/TechTag";
@@ -13,9 +14,11 @@ if (!project) {
 const GameHwndCaseStudyPage = () => (
     <div className="shell section case-study case-study--secondary">
         <header className="case-study__hero">
-            <span className="status-badge status-badge--muted">
-                {project.status}
-            </span>
+            <ProjectStatusBadges
+                badges={project.badges}
+                status={project.status}
+                muted
+            />
             <h1>{project.title}</h1>
             <p>
                 <RichText text={project.subtitle ?? ""} />

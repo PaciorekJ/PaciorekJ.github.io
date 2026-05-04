@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Project } from "../types/portfolio";
 import ButtonLink from "./ButtonLink";
+import ProjectStatusBadges from "./ProjectStatusBadges";
 import RichText from "./RichText";
 import TechTag from "./TechTag";
 
@@ -24,12 +25,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                     : { y: -4, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.12)" }
             }>
             <div className="project-card__header">
-                <span
-                    className={clsx("status-badge", {
-                        "status-badge--muted": !project.featured,
-                    })}>
-                    {project.status}
-                </span>
+                <ProjectStatusBadges
+                    badges={project.badges}
+                    status={project.status}
+                    muted={!project.featured}
+                    className="project-card__badges"
+                />
                 <h3>{project.title}</h3>
                 <p>{project.shortDescription}</p>
             </div>

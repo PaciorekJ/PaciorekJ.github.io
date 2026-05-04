@@ -8,7 +8,7 @@ import PageShell from "../components/PageShell";
 const ContactPage = () => (
     <PageShell eyebrow="Contact" title="Contact" className="contact-page">
         <div className="contact-layout">
-            <div className="content-card contact-card-primary">
+            <div className="content-card contact-card-primary contact-layout__copy">
                 <div className="contact-card__copy">
                     <p className="contact-card__lead">
                         Let&apos;s talk about software roles, contract work, or
@@ -57,22 +57,20 @@ const ContactPage = () => (
                     </p>
                 </div>
             </div>
-            <aside className="content-card content-card--accent no-print contact-card-photo-panel">
-                <div className="contact-card-photo">
-                    <div className="hero-card__portrait-wrap contact-photo-frame">
-                        <picture>
-                            <source srcSet={portraitWebp} type="image/webp" />
-                            <img
-                                className="hero-card__portrait contact-photo"
-                                src={portraitJpg}
-                                alt="Jason Paciorek"
-                                width="640"
-                                height="640"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                        </picture>
-                    </div>
+            <aside className="no-print contact-card-photo-panel contact-layout__image">
+                <div className="hero-card__portrait-wrap contact-photo-frame">
+                    <picture>
+                        <source srcSet={portraitWebp} type="image/webp" />
+                        <img
+                            className="hero-card__portrait contact-photo"
+                            src={portraitJpg}
+                            alt="Jason Paciorek"
+                            width="640"
+                            height="640"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </picture>
                 </div>
             </aside>
         </div>
