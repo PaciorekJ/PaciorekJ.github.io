@@ -10,8 +10,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
             name="description"
-            content="Jason Paciorek is a Full-Stack TypeScript Developer building production web and mobile applications with React, React Native, Node.js, MongoDB, Docker, Stripe, and OpenAPI-backed contracts." />
-        <title>Jason Paciorek | Full-Stack TypeScript Developer</title>
+            content="Jason Paciorek is a Full-Stack Developer building production web and mobile applications with React, React Native, Node.js, MongoDB, Docker, Stripe, and OpenAPI-backed contracts." />
+        <title>Jason Paciorek | Full-Stack Developer</title>
         <script>
             (() => {
                 const storedTheme = localStorage.getItem("theme");
@@ -21,6 +21,22 @@
                 const theme =
                     storedTheme ?? (systemPrefersDark ? "dark" : "light");
                 document.documentElement.dataset.theme = theme;
+            })();
+        </script>
+        <script>
+            (() => {
+                const redirect = window.location.search.match(/^[?]\/([^&]+)/);
+
+                if (!redirect) {
+                    return;
+                }
+
+                const route = redirect[1]
+                    .replace(/~and~/g, "&")
+                    .replace(/%23/g, "#");
+                const nextUrl = `${window.location.origin}/${route}${window.location.hash}`;
+
+                window.history.replaceState(null, "", nextUrl);
             })();
         </script>
     </head>

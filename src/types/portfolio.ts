@@ -31,6 +31,7 @@ export type Project = {
     slug: string;
     title: string;
     status: ProjectStatus;
+    badges?: string[];
     description: string;
     shortDescription: string;
     tech: string[];
