@@ -323,14 +323,16 @@ span {
 }
 
 .hero-main {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: clamp(2rem, 5vw, 4rem);
-    flex-wrap: wrap-reverse;
+    display: grid;
+    grid-template-areas:
+        "intro"
+        "image"
+        "body";
+    gap: 1.25rem;
+    align-items: start;
 }
 
-.hero__content,
+.hero__intro,
 .hero-card,
 .content-card,
 .project-card,
@@ -345,16 +347,23 @@ span {
     border-radius: var(--radius);
 }
 
-.hero__content {
-    flex: 1 1 min(100%, 34rem);
+.hero__intro {
+    grid-area: intro;
     padding: 1.25rem 0.25rem 0.5rem 0;
     background: transparent;
     border: none;
     box-shadow: none;
 }
 
+.hero__body {
+    grid-area: body;
+    max-width: 60ch;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
 .hero__summary {
-    margin-top: 1.5rem;
     font-size: 1.1rem;
     max-width: 56ch;
     color: var(--text);
@@ -370,7 +379,7 @@ span {
     display: flex;
     flex-wrap: wrap;
     gap: 0.875rem;
-    margin-top: 2rem;
+    margin-top: clamp(0.5rem, 2vw, 1.25rem);
 }
 
 .hero__proofs {
@@ -384,8 +393,8 @@ span {
 }
 
 .hero-card {
+    grid-area: image;
     display: flex;
-    flex: 0 1 auto;
     justify-content: center;
     align-items: center;
     background: transparent;
@@ -404,9 +413,10 @@ span {
 }
 
 .hero-card__portrait-wrap {
-    width: min(74vw, 260px);
+    width: min(100%, 420px);
     aspect-ratio: 1 / 1;
     overflow: hidden;
+    margin-inline: auto;
     border-radius: 24px;
     border: 1px solid color-mix(in srgb, var(--border) 90%, transparent);
     background: color-mix(in srgb, var(--surface-elevated) 92%, transparent);
@@ -1261,12 +1271,22 @@ span {
         display: none;
     }
 
+    .hero-main {
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+            "intro image"
+            "body image";
+        align-items: center;
+        gap: clamp(1rem, 3vw, 2rem) clamp(2rem, 5vw, 4rem);
+    }
+
     .hero-card {
         justify-content: flex-end;
     }
 
     .hero-card__portrait-wrap {
         width: clamp(220px, 26vw, 300px);
+        margin-inline: 0;
     }
 
     .page-shell__header {
@@ -1334,17 +1354,8 @@ span {
         grid-template-columns: 1fr;
     }
 
-    .hero-main {
+    .hero__actions {
         justify-content: center;
-    }
-
-    .hero__content,
-    .hero-card {
-        flex-basis: 100%;
-    }
-
-    .hero-card {
-        order: -1;
     }
 
     .about-highlight-grid,
