@@ -1,0 +1,2 @@
+import{t as e}from"./index-BiHb4GBL.js";var t=e(`mail`,[[`path`,{d:`m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7`,key:`132q7q`}],[`rect`,{x:`2`,y:`4`,width:`20`,height:`16`,rx:`2`,key:`izxlao`}]]),n=`/assets/profile-1024-CYYAT6G3.jpeg`,r=`/assets/profile-1024-Co0xsJwF.webp`,i=`/assets/profile-480-BgD7fVCg.jpeg`,a=`/assets/profile-480-CJE82oY8.webp`,o=`/assets/profile-768-6HeMbEez.jpeg`,s=`/assets/profile-768-BVX2zhnR.webp`;export{r as a,i,o as n,n as o,a as r,t as s,s as t};
+//# sourceMappingURL=profile-768-CLY9cbWt.js.map
