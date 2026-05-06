@@ -1,4 +1,3 @@
-import { motion, useReducedMotion } from "framer-motion";
 import { TimelineEntry } from "../types/portfolio";
 
 type TimelineItemProps = {
@@ -6,22 +5,15 @@ type TimelineItemProps = {
 };
 
 const TimelineItem = ({ entry }: TimelineItemProps) => {
-    const reduceMotion = useReducedMotion();
-
     return (
-        <motion.li
-            className="timeline-item"
-            initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-            whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.45, ease: "easeOut" }}>
+        <li className="timeline-item timeline-item--reveal">
             <div className="timeline-item__marker" aria-hidden="true" />
             <div className="timeline-item__content">
                 <p className="timeline-item__label">{entry.label}</p>
                 <h3>{entry.title}</h3>
                 <p>{entry.description}</p>
             </div>
-        </motion.li>
+        </li>
     );
 };
 
