@@ -12,6 +12,9 @@
     --accent-strong: #315f76;
     --accent-soft: #b8d4e3;
     --accent-muted: #e4f0f6;
+    --button-primary-background: #315f76;
+    --button-primary-background-hover: #264f63;
+    --button-primary-text: #ffffff;
     --secondary: #805532;
     --secondary-soft: #f0dfcc;
     --border: #e3d6c5;
@@ -51,6 +54,9 @@
     --accent-strong: #8bc4df;
     --accent-soft: #254f66;
     --accent-muted: #203b4c;
+    --button-primary-background: #8bc4df;
+    --button-primary-background-hover: #a9d8ee;
+    --button-primary-text: #121826;
     --secondary: #d9a86c;
     --secondary-soft: #392f24;
     --border: #35445c;
@@ -114,9 +120,14 @@ button:focus-visible {
 
 .app-shell {
     display: flex;
-    min-height: 100vh;
+    min-height: 100svh;
     flex-direction: column;
-    overflow-y: hidden;
+}
+
+@supports not (min-height: 100svh) {
+    .app-shell {
+        min-height: 100vh;
+    }
 }
 
 .page-main {
@@ -223,6 +234,7 @@ span {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    min-height: 4.5rem;
     padding: 1rem 0;
 }
 
@@ -242,11 +254,13 @@ span {
 .brand__name {
     font-weight: 800;
     color: var(--text-strong);
+    line-height: 1.2;
 }
 
 .brand__role {
     font-size: 0.88rem;
     color: var(--text-muted);
+    line-height: 1.25;
 }
 
 .theme-toggle,
@@ -507,14 +521,36 @@ span {
 }
 
 .button-link--primary {
-    background: var(--accent);
-    color: #fff;
-    box-shadow: 0 14px 28px color-mix(in srgb, var(--accent) 35%, transparent);
+    background: var(--button-primary-background);
+    color: var(--button-primary-text);
+    box-shadow: 0 14px 28px
+        color-mix(in srgb, var(--button-primary-background) 35%, transparent);
 }
 
 .button-link--primary:hover {
     transform: translateY(-1px);
-    background: var(--accent-strong);
+    background: var(--button-primary-background-hover);
+}
+
+.button-link--primary,
+.button-link--primary span,
+.button-link--primary svg {
+    color: var(--button-primary-text);
+}
+
+.hero-animate,
+.timeline-item--reveal {
+    animation: fade-in 0.35s ease both;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .button-link--secondary {
@@ -609,6 +645,21 @@ span {
     justify-content: space-between;
     gap: 1.25rem;
     min-width: 0;
+}
+
+.project-card--interactive {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .project-card--interactive:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+    }
 }
 
 .project-card--secondary {
@@ -743,6 +794,7 @@ span {
     height: 100%;
     border-radius: inherit;
     background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+    transition: width 0.7s ease-out;
 }
 
 .timeline {
@@ -1252,6 +1304,7 @@ span {
 .site-footer__inner {
     justify-content: space-between;
     align-items: center;
+    min-height: 4.25rem;
     padding: 1rem 0;
     flex-wrap: wrap;
 }
@@ -1374,6 +1427,10 @@ span {
 
     .theme-toggle--mobile {
         display: inline-flex;
+    }
+
+    .site-footer__inner {
+        min-height: 6.5rem;
     }
 
     .contact-list--compact {

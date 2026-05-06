@@ -1,4 +1,3 @@
-import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Mail } from "lucide-react";
 import {
     profile1024Jpeg,
@@ -24,26 +23,17 @@ import {
 } from "../data/site";
 
 const HomePage = () => {
-    const reduceMotion = useReducedMotion();
-    const heroAnimation = reduceMotion
-        ? undefined
-        : {
-              initial: { opacity: 0, y: 24 },
-              animate: { opacity: 1, y: 0 },
-              transition: { duration: 0.5 },
-          };
-
     return (
         <>
             <HomePageMetadata />
             <div>
                 <section className="hero shell section">
                     <div className="hero-main">
-                        <motion.div className="hero__intro" {...heroAnimation}>
+                        <div className="hero__intro hero-animate">
                             <p className="eyebrow">Jason Paciorek</p>
                             <h1>Full-Stack Developer</h1>
-                        </motion.div>
-                        <motion.div className="hero-card" {...heroAnimation}>
+                        </div>
+                        <div className="hero-card hero-animate">
                             <div className="hero-card__inner">
                                 <div className="hero-card__portrait-wrap no-print">
                                     <picture>
@@ -70,15 +60,15 @@ const HomePage = () => {
                                     </picture>
                                 </div>
                             </div>
-                        </motion.div>
-                        <motion.div className="hero__body" {...heroAnimation}>
+                        </div>
+                        <div className="hero__body hero-animate">
                             <p className="hero__summary">
                                 <RichText text={heroSummary} />
                             </p>
                             <p className="hero__support">
                                 <RichText text={heroSupportLine} />
                             </p>
-                        </motion.div>
+                        </div>
                     </div>
                     <div className="hero__actions no-print">
                         <ButtonLink to="/resume" variant="primary">
@@ -94,7 +84,7 @@ const HomePage = () => {
                             <ArrowRight size={18} aria-hidden="true" />
                         </ButtonLink>
                     </div>
-                    <motion.div className="hero__proofs" {...heroAnimation}>
+                    <div className="hero__proofs hero-animate">
                         <div className="hero__proofs-header">
                             <p className="eyebrow">What I bring</p>
                         </div>
@@ -108,7 +98,7 @@ const HomePage = () => {
                                 </div>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
                 </section>
 
                 <section className="shell section">

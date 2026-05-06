@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Project } from "../types/portfolio";
 import ButtonLink from "./ButtonLink";
@@ -12,18 +11,12 @@ type ProjectCardProps = {
 };
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
-    const reduceMotion = useReducedMotion();
-
     return (
-        <motion.article
+        <article
             className={clsx("project-card", {
                 "project-card--secondary": !project.featured,
-            })}
-            whileHover={
-                reduceMotion
-                    ? undefined
-                    : { y: -4, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.12)" }
-            }>
+                "project-card--interactive": Boolean(project.href),
+            })}>
             <div className="project-card__header">
                 <ProjectStatusBadges
                     badges={project.badges}
@@ -55,7 +48,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                     <RichText text={project.ctaLabel ?? "Project summary"} />
                 </div>
             )}
-        </motion.article>
+        </article>
     );
 };
 
