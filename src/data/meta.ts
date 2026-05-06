@@ -1,15 +1,15 @@
 export const ROUTE_PATHS = {
     HOME: "/",
-    RESUME: "/resume",
-    SKILLS: "/skills",
-    PROJECTS: "/projects",
+    RESUME: "/resume/",
+    SKILLS: "/skills/",
+    PROJECTS: "/projects/",
     WHITE_LABEL_MEMBERSHIP_PLATFORM:
-        "/projects/white-label-membership-platform",
-    ROUTINE_GYM_JOURNAL: "/projects/routine-gym-journal",
-    FITNESSBYTES: "/projects/fitnessbytes",
-    GAMEHWND: "/projects/gamehwnd",
-    EXPERIENCE: "/experience",
-    CONTACT: "/contact",
+        "/projects/white-label-membership-platform/",
+    ROUTINE_GYM_JOURNAL: "/projects/routine-gym-journal/",
+    FITNESSBYTES: "/projects/fitnessbytes/",
+    GAMEHWND: "/projects/gamehwnd/",
+    EXPERIENCE: "/experience/",
+    CONTACT: "/contact/",
 } as const;
 
 export type RoutePath = (typeof ROUTE_PATHS)[keyof typeof ROUTE_PATHS];
