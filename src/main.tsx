@@ -1,39 +1,27 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import { Navigate, RouterProvider, createBrowserRouter } from "react-router";
 import Layout from "./components/Layout";
 import PageMetadata from "./components/PageMetadata";
+import RouteErrorBoundary from "./components/RouteErrorBoundary";
 import { ROUTE_PATHS, type RoutePath } from "./data/meta";
 import "./index.css";
 
-const HomePage = lazy(() => import("./pages/HomePage"));
-const ResumePage = lazy(() => import("./pages/ResumePage"));
-const SkillsPage = lazy(() => import("./pages/SkillsPage"));
-const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
-const ExperiencePage = lazy(() => import("./pages/ExperiencePage"));
-const ContactPage = lazy(() => import("./pages/ContactPage"));
-
-const WhiteLabelCaseStudyPage = lazy(
-    () => import("./pages/WhiteLabelCaseStudyPage"),
-);
-const RoutineGymJournalCaseStudyPage = lazy(
-    () => import("./pages/RoutineGymJournalCaseStudyPage"),
-);
-const FitnessBytesCaseStudyPage = lazy(
-    () => import("./pages/FitnessBytesCaseStudyPage"),
-);
-const GameHwndCaseStudyPage = lazy(
-    () => import("./pages/GameHwndCaseStudyPage"),
-);
-
-const withSuspense = (element: React.ReactNode) => (
-    <Suspense fallback={null}>{element}</Suspense>
-);
+import ContactPage from "./pages/ContactPage";
+import ExperiencePage from "./pages/ExperiencePage";
+import FitnessBytesCaseStudyPage from "./pages/FitnessBytesCaseStudyPage";
+import GameHwndCaseStudyPage from "./pages/GameHwndCaseStudyPage";
+import HomePage from "./pages/HomePage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ResumePage from "./pages/ResumePage";
+import RoutineGymJournalCaseStudyPage from "./pages/RoutineGymJournalCaseStudyPage";
+import SkillsPage from "./pages/SkillsPage";
+import WhiteLabelCaseStudyPage from "./pages/WhiteLabelCaseStudyPage";
 
 const withRoute = (element: React.ReactNode, route: RoutePath) => (
     <>
         <PageMetadata route={route} />
-        {withSuspense(element)}
+        {element}
     </>
 );
 
@@ -41,6 +29,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout />,
+        errorElement: <RouteErrorBoundary />,
         children: [
             {
                 index: true,
