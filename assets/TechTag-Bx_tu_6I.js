@@ -1,2 +1,0 @@
-import{t as e}from"./jsx-runtime-2UHhqg_S.js";var t=e(),n=({badges:e,status:n,muted:r=!1,className:i=`status-badge-row`})=>(0,t.jsx)(`div`,{className:i,children:(e?.length?e:[n]).map(e=>(0,t.jsx)(`span`,{className:`status-badge${r?` status-badge--muted`:``}`,children:e},e))}),r=({label:e})=>(0,t.jsx)(`span`,{className:`tech-tag`,children:e});export{n,r as t};
-//# sourceMappingURL=TechTag-Bx_tu_6I.js.map

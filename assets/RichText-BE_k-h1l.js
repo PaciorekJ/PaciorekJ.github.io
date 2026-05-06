@@ -1,2 +1,0 @@
-import{n as e,s as t,t as n}from"./jsx-runtime-2UHhqg_S.js";var r=t(e(),1),i=n(),a=/(\*\*[^*]+\*\*|\*[^*]+\*)/g,o=({text:e,className:t})=>(0,i.jsx)(`span`,{className:t,children:e.split(a).filter(Boolean).map((e,t)=>e.startsWith(`**`)&&e.endsWith(`**`)?(0,i.jsx)(`strong`,{children:e.slice(2,-2)},`${e}-${t}`):e.startsWith(`*`)&&e.endsWith(`*`)?(0,i.jsx)(`em`,{children:e.slice(1,-1)},`${e}-${t}`):(0,i.jsx)(r.Fragment,{children:e},`${e}-${t}`))});export{o as t};
-//# sourceMappingURL=RichText-BE_k-h1l.js.map
