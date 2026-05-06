@@ -2,16 +2,82 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Jason Paciorek | Full-Stack Developer</title>
+
+        <meta
+            name="description"
+            content="Jason Paciorek is a full-stack developer building production web and mobile applications with React, React Native, Node.js, MongoDB, Docker, Stripe, and OpenAPI-backed contracts." />
+
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Jason Paciorek" />
+        <meta
+            name="theme-color"
+            content="#f8f3ea"
+            media="(prefers-color-scheme: light)" />
+        <meta
+            name="theme-color"
+            content="#121826"
+            media="(prefers-color-scheme: dark)" />
+
+        <link rel="canonical" href="https://paciorekj.github.io/" />
+
         <link
             rel="shortcut icon"
             href="/assets/favicon.ico"
             type="image/x-icon" />
         <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Jason Paciorek" />
         <meta
-            name="description"
-            content="Jason Paciorek is a Full-Stack Developer building production web and mobile applications with React, React Native, Node.js, MongoDB, Docker, Stripe, and OpenAPI-backed contracts." />
-        <title>Jason Paciorek | Full-Stack Developer</title>
+            property="og:title"
+            content="Jason Paciorek | Full-Stack Developer" />
+        <meta
+            property="og:description"
+            content="Full-stack developer portfolio featuring production SaaS, mobile applications, APIs, payment integrations, and case studies." />
+        <meta property="og:url" content="https://paciorekj.github.io/" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta
+            name="twitter:title"
+            content="Jason Paciorek | Full-Stack Developer" />
+        <meta
+            name="twitter:description"
+            content="Full-stack developer portfolio featuring production SaaS, mobile applications, APIs, payment integrations, and case studies." />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Jason Paciorek",
+                "url": "https://paciorekj.github.io/",
+                "jobTitle": "Full-Stack Developer",
+                "email": "mailto:paciorekjason@gmail.com",
+                "sameAs": [
+                    "https://github.com/PaciorekJ",
+                    "https://www.linkedin.com/in/jasonpaciorek"
+                ],
+                "knowsAbout": [
+                    "TypeScript",
+                    "React",
+                    "React Native",
+                    "Node.js",
+                    "MongoDB",
+                    "Redis",
+                    "Docker",
+                    "Stripe",
+                    "OpenAPI",
+                    "SaaS development",
+                    "API development",
+                    "Mobile application development"
+                ]
+            }
+        </script>
+
         <script>
             (() => {
                 const storedTheme = localStorage.getItem("theme");
@@ -20,9 +86,11 @@
                 ).matches;
                 const theme =
                     storedTheme ?? (systemPrefersDark ? "dark" : "light");
+
                 document.documentElement.dataset.theme = theme;
             })();
         </script>
+
         <script>
             (() => {
                 const redirect = window.location.search.match(/^[?]\/([^&]+)/);
@@ -34,12 +102,14 @@
                 const route = redirect[1]
                     .replace(/~and~/g, "&")
                     .replace(/%23/g, "#");
+
                 const nextUrl = `${window.location.origin}/${route}${window.location.hash}`;
 
                 window.history.replaceState(null, "", nextUrl);
             })();
         </script>
     </head>
+
     <body>
         <div id="root"></div>
         <script type="module" src="/src/main.tsx"></script>
