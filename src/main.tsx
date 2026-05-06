@@ -2,6 +2,8 @@ import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import { Navigate, RouterProvider, createBrowserRouter } from "react-router";
 import Layout from "./components/Layout";
+import PageMetadata from "./components/PageMetadata";
+import { ROUTE_PATHS, type RoutePath } from "./data/meta";
 import "./index.css";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -28,34 +30,74 @@ const withSuspense = (element: React.ReactNode) => (
     <Suspense fallback={null}>{element}</Suspense>
 );
 
+const withRoute = (element: React.ReactNode, route: RoutePath) => (
+    <>
+        <PageMetadata route={route} />
+        {withSuspense(element)}
+    </>
+);
+
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout />,
         children: [
-            { index: true, element: withSuspense(<HomePage />) },
-            { path: "resume", element: withSuspense(<ResumePage />) },
-            { path: "skills", element: withSuspense(<SkillsPage />) },
-            { path: "projects", element: withSuspense(<ProjectsPage />) },
+            {
+                index: true,
+                element: withRoute(<HomePage />, ROUTE_PATHS.HOME),
+            },
+            {
+                path: "resume",
+                element: withRoute(<ResumePage />, ROUTE_PATHS.RESUME),
+            },
+            {
+                path: "skills",
+                element: withRoute(<SkillsPage />, ROUTE_PATHS.SKILLS),
+            },
+            {
+                path: "projects",
+                element: withRoute(<ProjectsPage />, ROUTE_PATHS.PROJECTS),
+            },
             {
                 path: "projects/white-label-membership-platform",
-                element: withSuspense(<WhiteLabelCaseStudyPage />),
+                element: withRoute(
+                    <WhiteLabelCaseStudyPage />,
+                    ROUTE_PATHS.WHITE_LABEL_MEMBERSHIP_PLATFORM,
+                ),
             },
             {
                 path: "projects/routine-gym-journal",
-                element: withSuspense(<RoutineGymJournalCaseStudyPage />),
+                element: withRoute(
+                    <RoutineGymJournalCaseStudyPage />,
+                    ROUTE_PATHS.ROUTINE_GYM_JOURNAL,
+                ),
             },
             {
                 path: "projects/fitnessbytes",
-                element: withSuspense(<FitnessBytesCaseStudyPage />),
+                element: withRoute(
+                    <FitnessBytesCaseStudyPage />,
+                    ROUTE_PATHS.FITNESSBYTES,
+                ),
             },
             {
                 path: "projects/gamehwnd",
-                element: withSuspense(<GameHwndCaseStudyPage />),
+                element: withRoute(
+                    <GameHwndCaseStudyPage />,
+                    ROUTE_PATHS.GAMEHWND,
+                ),
             },
-            { path: "experience", element: withSuspense(<ExperiencePage />) },
-            { path: "contact", element: withSuspense(<ContactPage />) },
-            { path: "*", element: <Navigate to="/" replace /> },
+            {
+                path: "experience",
+                element: withRoute(<ExperiencePage />, ROUTE_PATHS.EXPERIENCE),
+            },
+            {
+                path: "contact",
+                element: withRoute(<ContactPage />, ROUTE_PATHS.CONTACT),
+            },
+            {
+                path: "*",
+                element: <Navigate to="/" replace />,
+            },
         ],
     },
 ]);
