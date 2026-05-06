@@ -1,0 +1,2 @@
+import{i as e,t}from"./jsx-runtime-BE_tW6Ee.js";import{y as n}from"./index-BcxlEjM6.js";var r=e(n(),1),i=t(),a=/(\*\*[^*]+\*\*|\*[^*]+\*)/g,o=({text:e,className:t})=>(0,i.jsx)(`span`,{className:t,children:e.split(a).filter(Boolean).map((e,t)=>e.startsWith(`**`)&&e.endsWith(`**`)?(0,i.jsx)(`strong`,{children:e.slice(2,-2)},`${e}-${t}`):e.startsWith(`*`)&&e.endsWith(`*`)?(0,i.jsx)(`em`,{children:e.slice(1,-1)},`${e}-${t}`):(0,i.jsx)(r.Fragment,{children:e},`${e}-${t}`))});export{o as t};
+//# sourceMappingURL=RichText-B3ILVmQl.js.map

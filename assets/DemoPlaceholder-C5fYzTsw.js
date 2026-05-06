@@ -1,2 +1,0 @@
-import{t as e}from"./jsx-runtime-2UHhqg_S.js";var t=e(),n=({label:e,description:n,status:r=`Coming soon`})=>(0,t.jsxs)(`div`,{className:`demo-placeholder`,children:[(0,t.jsxs)(`div`,{children:[(0,t.jsx)(`h4`,{children:e}),(0,t.jsx)(`p`,{children:n})]}),(0,t.jsx)(`span`,{className:`status-badge status-badge--muted`,children:r})]});export{n as t};
-//# sourceMappingURL=DemoPlaceholder-C5fYzTsw.js.map
