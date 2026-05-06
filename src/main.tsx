@@ -1,46 +1,60 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import { Navigate, RouterProvider, createBrowserRouter } from "react-router";
 import Layout from "./components/Layout";
 import "./index.css";
-import ContactPage from "./pages/ContactPage";
-import ExperiencePage from "./pages/ExperiencePage";
-import FitnessBytesCaseStudyPage from "./pages/FitnessBytesCaseStudyPage";
-import GameHwndCaseStudyPage from "./pages/GameHwndCaseStudyPage";
-import HomePage from "./pages/HomePage";
-import ProjectsPage from "./pages/ProjectsPage";
-import ResumePage from "./pages/ResumePage";
-import RoutineGymJournalCaseStudyPage from "./pages/RoutineGymJournalCaseStudyPage";
-import SkillsPage from "./pages/SkillsPage";
-import WhiteLabelCaseStudyPage from "./pages/WhiteLabelCaseStudyPage";
+
+const HomePage = lazy(() => import("./pages/HomePage"));
+const ResumePage = lazy(() => import("./pages/ResumePage"));
+const SkillsPage = lazy(() => import("./pages/SkillsPage"));
+const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
+const ExperiencePage = lazy(() => import("./pages/ExperiencePage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+
+const WhiteLabelCaseStudyPage = lazy(
+    () => import("./pages/WhiteLabelCaseStudyPage"),
+);
+const RoutineGymJournalCaseStudyPage = lazy(
+    () => import("./pages/RoutineGymJournalCaseStudyPage"),
+);
+const FitnessBytesCaseStudyPage = lazy(
+    () => import("./pages/FitnessBytesCaseStudyPage"),
+);
+const GameHwndCaseStudyPage = lazy(
+    () => import("./pages/GameHwndCaseStudyPage"),
+);
+
+const withSuspense = (element: React.ReactNode) => (
+    <Suspense fallback={null}>{element}</Suspense>
+);
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout />,
         children: [
-            { index: true, element: <HomePage /> },
-            { path: "resume", element: <ResumePage /> },
-            { path: "skills", element: <SkillsPage /> },
-            { path: "projects", element: <ProjectsPage /> },
+            { index: true, element: withSuspense(<HomePage />) },
+            { path: "resume", element: withSuspense(<ResumePage />) },
+            { path: "skills", element: withSuspense(<SkillsPage />) },
+            { path: "projects", element: withSuspense(<ProjectsPage />) },
             {
                 path: "projects/white-label-membership-platform",
-                element: <WhiteLabelCaseStudyPage />,
+                element: withSuspense(<WhiteLabelCaseStudyPage />),
             },
             {
                 path: "projects/routine-gym-journal",
-                element: <RoutineGymJournalCaseStudyPage />,
+                element: withSuspense(<RoutineGymJournalCaseStudyPage />),
             },
             {
                 path: "projects/fitnessbytes",
-                element: <FitnessBytesCaseStudyPage />,
+                element: withSuspense(<FitnessBytesCaseStudyPage />),
             },
             {
                 path: "projects/gamehwnd",
-                element: <GameHwndCaseStudyPage />,
+                element: withSuspense(<GameHwndCaseStudyPage />),
             },
-            { path: "experience", element: <ExperiencePage /> },
-            { path: "contact", element: <ContactPage /> },
+            { path: "experience", element: withSuspense(<ExperiencePage />) },
+            { path: "contact", element: withSuspense(<ContactPage />) },
             { path: "*", element: <Navigate to="/" replace /> },
         ],
     },

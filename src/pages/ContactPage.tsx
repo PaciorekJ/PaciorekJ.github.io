@@ -1,7 +1,13 @@
 import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import portraitJpg from "../assets/me.jpg";
-import portraitWebp from "../assets/me.webp";
+import {
+    profile1024Jpeg,
+    profile1024Webp,
+    profile480Jpeg,
+    profile480Webp,
+    profile768Jpeg,
+    profile768Webp,
+} from "../assets";
 import ButtonLink from "../components/ButtonLink";
 import PageShell from "../components/PageShell";
 
@@ -60,13 +66,22 @@ const ContactPage = () => (
             <aside className="no-print contact-card-photo-panel contact-layout__image">
                 <div className="hero-card__portrait-wrap contact-photo-frame">
                     <picture>
-                        <source srcSet={portraitWebp} type="image/webp" />
+                        <source
+                            type="image/webp"
+                            srcSet={`${profile480Webp} 480w, ${profile768Webp} 768w, ${profile1024Webp} 1024w`}
+                            sizes="(min-width: 768px) 300px, min(100vw - 2rem, 420px)"
+                        />
+                        <source
+                            type="image/jpeg"
+                            srcSet={`${profile480Jpeg} 480w, ${profile768Jpeg} 768w, ${profile1024Jpeg} 1024w`}
+                            sizes="(min-width: 768px) 300px, min(100vw - 2rem, 420px)"
+                        />
                         <img
                             className="hero-card__portrait contact-photo"
-                            src={portraitJpg}
+                            src={profile480Webp}
                             alt="Jason Paciorek"
-                            width="640"
-                            height="640"
+                            width="480"
+                            height="480"
                             loading="lazy"
                             decoding="async"
                         />
