@@ -1,2 +1,0 @@
-import{t as e}from"./jsx-runtime-BE_tW6Ee.js";var t=e(),n=({eyebrow:e,title:n,description:r,align:i=`left`})=>(0,t.jsxs)(`div`,{className:`section-heading section-heading--${i}`,children:[e?(0,t.jsx)(`p`,{className:`section-heading__eyebrow`,children:e}):null,(0,t.jsx)(`h2`,{children:n}),r?(0,t.jsx)(`p`,{className:`section-heading__description`,children:r}):null]});export{n as t};
-//# sourceMappingURL=SectionHeading-D2duBtOY.js.map

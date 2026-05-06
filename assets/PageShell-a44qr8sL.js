@@ -1,2 +1,0 @@
-import{t as e}from"./jsx-runtime-BE_tW6Ee.js";import{t}from"./SectionHeading-D2duBtOY.js";var n=e(),r=({eyebrow:e,title:r,description:i,actions:a,children:o,className:s=``})=>(0,n.jsxs)(`section`,{className:`shell section page-shell ${s}`.trim(),children:[(0,n.jsxs)(`header`,{className:`page-shell__header`,children:[(0,n.jsx)(t,{eyebrow:e,title:r,description:i}),a?(0,n.jsx)(`div`,{className:`page-shell__actions`,children:a}):null]}),(0,n.jsx)(`div`,{className:`page-shell__content`,children:o})]});export{r as t};
-//# sourceMappingURL=PageShell-a44qr8sL.js.map
