@@ -1,0 +1,21 @@
+{
+    "name": "Jason Paciorek | Full-Stack Developer",
+    "short_name": "Jason Paciorek",
+    "description": "Portfolio website for Jason Paciorek, a full-stack developer building production web and mobile applications with React, React Native, Node.js, MongoDB, Docker, Stripe, and OpenAPI-backed contracts.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "background_color": "#f8f3ea",
+    "theme_color": "#508aa8",
+    "icons": [
+        {
+            "src": "/assets/favicon.ico",
+            "sizes": "16x16 32x32 48x48",
+            "type": "image/x-icon",
+            "purpose": "any"
+        }
+    ],
+    "categories": ["portfolio", "business", "developer"],
+    "lang": "en-US"
+}
