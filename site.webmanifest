@@ -1,7 +1,7 @@
 {
-    "name": "Jason Paciorek | Full-Stack Developer",
+    "name": "Jason Paciorek | Full-Stack Developer & Software Engineer",
     "short_name": "Jason Paciorek",
-    "description": "Portfolio website for Jason Paciorek, a full-stack developer building production web and mobile applications with React, React Native, Node.js, MongoDB, Docker, Stripe, and OpenAPI-backed contracts.",
+    "description": "Portfolio and resume website for Jason Paciorek, a full-stack developer, software engineer, and web developer building production web and mobile applications.",
     "start_url": "/",
     "scope": "/",
     "display": "standalone",
@@ -10,9 +10,15 @@
     "theme_color": "#508aa8",
     "icons": [
         {
-            "src": "/assets/favicon.ico",
-            "sizes": "16x16 32x32 48x48",
-            "type": "image/x-icon",
+            "src": "/assets/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/assets/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
             "purpose": "any"
         }
     ],
