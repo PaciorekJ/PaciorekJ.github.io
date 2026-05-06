@@ -1,8 +1,15 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Mail } from "lucide-react";
-import portraitJpg from "../assets/me.jpg";
-import portraitWebp from "../assets/me.webp";
+import {
+    profile1024Jpeg,
+    profile1024Webp,
+    profile480Jpeg,
+    profile480Webp,
+    profile768Jpeg,
+    profile768Webp,
+} from "../assets";
 import ButtonLink from "../components/ButtonLink";
+import HomePageMetadata from "../components/HomePageMetadata";
 import ProjectCard from "../components/ProjectCard";
 import RichText from "../components/RichText";
 import SectionHeading from "../components/SectionHeading";
@@ -27,126 +34,138 @@ const HomePage = () => {
           };
 
     return (
-        <div>
-            <section className="hero shell section">
-                <div className="hero-main">
-                    <motion.div className="hero__intro" {...heroAnimation}>
-                        <p className="eyebrow">Jason Paciorek</p>
-                        <h1>Full-Stack Developer</h1>
-                    </motion.div>
-                    <motion.div className="hero-card" {...heroAnimation}>
-                        <div className="hero-card__inner">
-                            <div className="hero-card__portrait-wrap no-print">
-                                <picture>
-                                    <source
-                                        srcSet={portraitWebp}
-                                        type="image/webp"
-                                    />
-                                    <img
-                                        className="hero-card__portrait"
-                                        src={portraitJpg}
-                                        alt="Jason Paciorek"
-                                        width="640"
-                                        height="640"
-                                        loading="eager"
-                                        decoding="async"
-                                    />
-                                </picture>
+        <>
+            <HomePageMetadata />
+            <div>
+                <section className="hero shell section">
+                    <div className="hero-main">
+                        <motion.div className="hero__intro" {...heroAnimation}>
+                            <p className="eyebrow">Jason Paciorek</p>
+                            <h1>Full-Stack Developer</h1>
+                        </motion.div>
+                        <motion.div className="hero-card" {...heroAnimation}>
+                            <div className="hero-card__inner">
+                                <div className="hero-card__portrait-wrap no-print">
+                                    <picture>
+                                        <source
+                                            type="image/webp"
+                                            srcSet={`${profile480Webp} 480w, ${profile768Webp} 768w, ${profile1024Webp} 1024w`}
+                                            sizes="(min-width: 768px) 300px, min(100vw - 2rem, 420px)"
+                                        />
+                                        <source
+                                            type="image/jpeg"
+                                            srcSet={`${profile480Jpeg} 480w, ${profile768Jpeg} 768w, ${profile1024Jpeg} 1024w`}
+                                            sizes="(min-width: 768px) 300px, min(100vw - 2rem, 420px)"
+                                        />
+                                        <img
+                                            className="hero-card__portrait"
+                                            src={profile768Webp}
+                                            alt="Jason Paciorek"
+                                            width="768"
+                                            height="768"
+                                            loading="eager"
+                                            decoding="async"
+                                            fetchPriority="high"
+                                        />
+                                    </picture>
+                                </div>
                             </div>
+                        </motion.div>
+                        <motion.div className="hero__body" {...heroAnimation}>
+                            <p className="hero__summary">
+                                <RichText text={heroSummary} />
+                            </p>
+                            <p className="hero__support">
+                                <RichText text={heroSupportLine} />
+                            </p>
+                        </motion.div>
+                    </div>
+                    <div className="hero__actions no-print">
+                        <ButtonLink to="/resume" variant="primary">
+                            View Resume
+                        </ButtonLink>
+                        <ButtonLink
+                            href="mailto:paciorekjason@gmail.com"
+                            variant="secondary">
+                            <Mail size={18} aria-hidden="true" /> Email Me
+                        </ButtonLink>
+                        <ButtonLink to="/projects" variant="ghost">
+                            View Projects{" "}
+                            <ArrowRight size={18} aria-hidden="true" />
+                        </ButtonLink>
+                    </div>
+                    <motion.div className="hero__proofs" {...heroAnimation}>
+                        <div className="hero__proofs-header">
+                            <p className="eyebrow">What I bring</p>
+                        </div>
+                        <div className="proof-chip-grid proof-chip-grid--hero">
+                            {homeProofChips.map((chip) => (
+                                <div className="proof-chip" key={chip.title}>
+                                    <p>
+                                        <RichText text={chip.title} />
+                                    </p>
+                                    <span>{chip.description}</span>
+                                </div>
+                            ))}
                         </div>
                     </motion.div>
-                    <motion.div className="hero__body" {...heroAnimation}>
-                        <p className="hero__summary">
-                            <RichText text={heroSummary} />
+                </section>
+
+                <section className="shell section">
+                    <SectionHeading
+                        eyebrow="About"
+                        title="Software built around real workflows"
+                    />
+                    <div className="content-card">
+                        <p>
+                            <RichText text={aboutSummary} />
                         </p>
-                        <p className="hero__support">
-                            <RichText text={heroSupportLine} />
-                        </p>
-                    </motion.div>
-                </div>
-                <div className="hero__actions no-print">
-                    <ButtonLink to="/resume" variant="primary">
-                        View Resume
-                    </ButtonLink>
-                    <ButtonLink
-                        href="mailto:paciorekjason@gmail.com"
-                        variant="secondary">
-                        <Mail size={18} aria-hidden="true" /> Email Me
-                    </ButtonLink>
-                    <ButtonLink to="/projects" variant="ghost">
-                        View Projects{" "}
-                        <ArrowRight size={18} aria-hidden="true" />
-                    </ButtonLink>
-                </div>
-                <motion.div className="hero__proofs" {...heroAnimation}>
-                    <div className="hero__proofs-header">
-                        <p className="eyebrow">What I bring</p>
+                        <div className="about-highlight-grid">
+                            {aboutHighlights.map((item) => (
+                                <div
+                                    className="about-highlight"
+                                    key={item.title}>
+                                    <h3>
+                                        <RichText text={item.title} />
+                                    </h3>
+                                    <p>{item.description}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                    <div className="proof-chip-grid proof-chip-grid--hero">
-                        {homeProofChips.map((chip) => (
-                            <div className="proof-chip" key={chip.title}>
-                                <p>
-                                    <RichText text={chip.title} />
-                                </p>
-                                <span>{chip.description}</span>
-                            </div>
+                </section>
+
+                <section className="shell section">
+                    <SectionHeading
+                        eyebrow="Featured projects"
+                        title="Selected work with the strongest interview signal"
+                        description="Two projects that show full-stack delivery, mobile architecture, integrations, and deployment ownership."
+                    />
+                    <div className="card-grid card-grid--projects">
+                        {featuredProjects.map((project) => (
+                            <ProjectCard key={project.slug} project={project} />
                         ))}
                     </div>
-                </motion.div>
-            </section>
+                </section>
 
-            <section className="shell section">
-                <SectionHeading
-                    eyebrow="About"
-                    title="Software built around real workflows"
-                />
-                <div className="content-card">
-                    <p>
-                        <RichText text={aboutSummary} />
-                    </p>
-                    <div className="about-highlight-grid">
-                        {aboutHighlights.map((item) => (
-                            <div className="about-highlight" key={item.title}>
+                <section className="shell section">
+                    <SectionHeading
+                        eyebrow="Core strengths"
+                        title="Where I add the most value"
+                    />
+                    <div className="strength-grid">
+                        {technicalStrengths.map((strength) => (
+                            <div className="strength-card" key={strength.title}>
                                 <h3>
-                                    <RichText text={item.title} />
+                                    <RichText text={strength.title} />
                                 </h3>
-                                <p>{item.description}</p>
+                                <p>{strength.description}</p>
                             </div>
                         ))}
                     </div>
-                </div>
-            </section>
-
-            <section className="shell section">
-                <SectionHeading
-                    eyebrow="Featured projects"
-                    title="Selected work with the strongest interview signal"
-                    description="Two projects that show full-stack delivery, mobile architecture, integrations, and deployment ownership."
-                />
-                <div className="card-grid card-grid--projects">
-                    {featuredProjects.map((project) => (
-                        <ProjectCard key={project.slug} project={project} />
-                    ))}
-                </div>
-            </section>
-
-            <section className="shell section">
-                <SectionHeading
-                    eyebrow="Core strengths"
-                    title="Where I add the most value"
-                />
-                <div className="strength-grid">
-                    {technicalStrengths.map((strength) => (
-                        <div className="strength-card" key={strength.title}>
-                            <h3>
-                                <RichText text={strength.title} />
-                            </h3>
-                            <p>{strength.description}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
-        </div>
+                </section>
+            </div>
+        </>
     );
 };
 
